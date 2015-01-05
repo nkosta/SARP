@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="chart_colors">
+        <item>#727272</item>
+        <item>#f1595f</item>
+        <item>#79c36a</item>
+        <item>#599ad3</item>
+        <item>#f9a65a</item>
+        <item>#9e66ab</item>
+        <item>#cd7058</item>
+    </string-array>
+</resources>

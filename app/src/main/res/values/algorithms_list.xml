@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   	<string-array name="algorithms_list_array">
+   	    <item>Priority Scheduling</item>
+   	    <item>Shortest job next</item>
+   	    <item>Shortest remaining time</item>
+   	    <item>Highest response ratio next</item>
+   	    <item>Round-robin</item>
+ 	</string-array>
+</resources>

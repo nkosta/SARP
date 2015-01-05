@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="algorithms_descriptions_array">
+        <item><b>Priority scheduling</b>, operacijski sistem vsakemu procesu dodeli fiksno prioriteto. Razvrščevalnik
+            nato procese razvrsti v pravilnem vrstnem redu glede na prioriteto</item>
+        <item><b>Shortest job next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
+        <item><b>Shortest remaining time</b>, preklopna (preemptive) verzija SJN algoritma</item>
+        <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SJN kjer je prioriteta
+            odvisna od časa izvajanja ter časa čakanja</item>
+        <item><b>Round-robin</b>, uporablja se pri procesnih ter omrežnih razvrščevalnikih. Vsakemu procesu je dodeljena 
+            enakovredna časovna rezina, v krožnem zaporedju</item>
+    </string-array>
+</resources>

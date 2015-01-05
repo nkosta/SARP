@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="data_gen_mode_array">
+        <item>Avtomatično generiranje</item>
+        <item>Ročen vnos uporabnika</item>
+    </string-array>
+</resources>
