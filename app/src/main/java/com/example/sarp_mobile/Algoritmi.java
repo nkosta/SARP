@@ -8,6 +8,10 @@ import java.util.Vector;
 public class Algoritmi
 {
     public final static int PRIORITY_SCHEDULING = 0;
+    public final static int SJN = 1;
+    public final static int HRRN = 3;
+    public final static int ROUND_ROBIN = 4;
+
 
     public static Proces[] fcfs(Proces[]procesi)
     {
@@ -167,10 +171,73 @@ public class Algoritmi
         return q;
     }
 
-	/*
-	public static void srt()
-	{
-		//po novem letu
-	}
-	*/
+    public static Proces[] rr(Proces[]procesi, int quantum) throws Exception
+    {
+        int j;
+        int k;
+        int q;
+        int sum = 0;
+        q = quantum;
+        int n = procesi.length;
+        int bt[] = new int[n];
+        int wt[] = new int[n];
+        int a[] = new int[n];
+
+        for(int m=0; m<procesi.length; m++)
+        {
+            bt[m] = procesi[m].get_trajanje_proc();
+        }
+
+        for(int i=0; i<n; i++)
+            a[i] = bt[i];
+
+        for(int i=0; i<n; i++)
+            wt[i] = 0;
+
+        do
+        {
+            for(int i=0; i<n; i++)
+            {
+                if(bt[i] > q && bt[i] != 0)
+                {
+                    //Simulator.RR_gantogram.add(procesi[i].get_ime_proc());
+                    //Simulator.RR_gantogram.add(q);
+
+                    bt[i] -= q;
+
+                    for(j=0; j<n; j++)
+                    {
+                        if((j !=i ) && (bt[j] != 0))
+                            wt[j] += q;
+                    }
+                }
+
+                else if(bt[i] <= q && bt[i] != 0)
+                {
+                    //Simulator.RR_gantogram.add(procesi[i].get_ime_proc());
+                    //Simulator.RR_gantogram.add(bt[i]);
+
+                    for(j=0; j<n; j++)
+                    {
+                        if((j != i ) && (bt[j] != 0))
+                            wt[j] += bt[i];
+                    }
+
+                    bt[i] = 0;
+                }
+            }
+
+            sum = 0;
+
+            for(k=0;k<n;k++)
+                sum = sum + bt[k];
+
+        }
+        while(sum != 0);
+
+        for(int i=0; i<n; i++)
+            procesi[i].set_cas_cakanja(wt[i]);
+
+        return procesi;
+    }
 }

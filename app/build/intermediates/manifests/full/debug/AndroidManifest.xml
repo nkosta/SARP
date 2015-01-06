@@ -35,14 +35,6 @@
             android:label="@string/title_activity_display_algorithms" >
         </activity>
         <activity
-            android:name="com.example.sarp_mobile.AlgorithmSetupActivity"
-            android:label="@string/title_activity_algorithm_setup" >
-        </activity>
-        <activity
-            android:name="com.example.sarp_mobile.AlgorithmSimulationActivity"
-            android:label="@string/title_activity_algorithm_simulation" >
-        </activity>
-        <activity
             android:name="com.example.sarp_mobile.AlgorithmsSwipeActivity"
             android:label="@string/title_activity_algorithms_swipe" >
         </activity>

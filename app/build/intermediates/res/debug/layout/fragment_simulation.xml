@@ -1,60 +1,289 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="180dp">
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.05">
-        </RelativeLayout>
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
         <LinearLayout
-            android:layout_weight="0.9"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_gravity="bottom"
-            android:orientation="vertical">
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp">
 
-            <LinearLayout
-                android:id="@+id/gantt_chart"
-                android:layout_width="match_parent"
-                android:layout_height="110dp"
-                android:orientation="horizontal">
-            </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.05">
+                </RelativeLayout>
 
-            <LinearLayout
-                android:id="@+id/gantt_chart_values"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:orientation="horizontal">
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_weight="0.9"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical">
 
+                    <LinearLayout
+                        android:id="@+id/gantt_chart"
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/gantt_chart_values"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:orientation="horizontal">
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="0.05">
+                </RelativeLayout>
         </LinearLayout>
 
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="0.05">
-        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </LinearLayout>
+            <TableLayout
+                android:id="@+id/simulation_table"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:shrinkColumns="*"
+                android:stretchColumns="*">
 
-    <Button
-        android:id="@+id/buttonChart"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="5dp"
-        android:layout_gravity="center"
-        android:padding="5dp"
-        android:textColor="#ffffff"
-        android:background="@drawable/mybutton"
-        android:text="Chart"/>
+                <TableRow
+                    android:id="@+id/tableRow0"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal">
 
+                    <TextView
+                        android:text="Ime\nprocesa"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:typeface="serif">
+                    </TextView>
+                    <TextView
+                        android:text="Čas\nčakanja"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:typeface="serif">
+                    </TextView>
+                    <TextView
+                        android:text="TAT"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:typeface="serif">
+                    </TextView>
+                    <TextView
+                        android:text="NTAT"
+                        android:textStyle="bold"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:text="A"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow2"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/TextView21"
+                        android:text="B"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView22"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView23"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView24"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow3"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/TextView31"
+                        android:text="C"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView32"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView33"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView34"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+
+                <TableRow
+                    android:id="@+id/tableRow4"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/TextView41"
+                        android:text="D"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView42"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView43"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView44"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tableRow5"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/TextView51"
+                        android:text="E"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView52"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView53"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView54"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+                <TableRow
+                    android:id="@+id/tableRow6"
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:gravity="center_horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/TextView61"
+                        android:text="F"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView62"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView63"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/TextView64"
+                        android:text="0"
+                        android:typeface="serif"
+                        android:gravity="center_horizontal">
+                    </TextView>
+                </TableRow>
+            </TableLayout>
+
+        </LinearLayout>
 
 
 </LinearLayout><!-- From: file:/C:/Users/Kosta/AndroidstudioProjects/SARP_mobile/app/src/main/res/layout/fragment_simulation.xml -->

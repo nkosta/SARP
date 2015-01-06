@@ -86,7 +86,6 @@ public final class R {
         public static final int TextView64=0x7f090024;
         public static final int TextViewAlgoSetupActivityTitle=0x7f090000;
         public static final int action_settings=0x7f090047;
-        public static final int buttonChart=0x7f090046;
         public static final int buttonDisplayAlgorithms=0x7f090041;
         public static final int buttonGenerateData=0x7f090027;
         public static final int editText1=0x7f090040;
@@ -97,6 +96,7 @@ public final class R {
         public static final int pager=0x7f09003f;
         public static final int process_table=0x7f090001;
         public static final int seekBar1=0x7f090025;
+        public static final int simulation_table=0x7f090046;
         public static final int tableRow0=0x7f090002;
         public static final int tableRow1=0x7f090007;
         public static final int tableRow2=0x7f09000c;

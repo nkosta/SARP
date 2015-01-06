@@ -1,7 +1,6 @@
 package com.example.sarp_mobile;
 
 import android.app.ActionBar;
-import android.app.Activity;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -9,14 +8,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -131,7 +126,12 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         //btnSimuliraj = (Button)findViewById(R.id.buttonSimulate);
 
         x.resetAll();
-        processesArray = new Proces[numOfProcesses];
+        if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
+            processesArray = new Priority_Proces[numOfProcesses];
+        }
+        else {
+            processesArray = new Proces[numOfProcesses];
+        }
 
         int casDospetjaPrev = -1;
         for (int i = 0; i < numOfProcesses; i++) {
@@ -199,34 +199,95 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
     // Funkcija za izris diagrama
     public void drawChart(Proces procesi[]) {
-        //float weights[] = {0.3f, 0.1f, 0.4f, 0.2f};
         LinearLayout ganttChart = (LinearLayout) findViewById(R.id.gantt_chart);
-        ganttChart.removeAllViews();
-        LinearLayout child;
+        LinearLayout chartValues = (LinearLayout) findViewById(R.id.gantt_chart_values);
+        LinearLayout child, childValue;
 
+        ganttChart.removeAllViews();
+        chartValues.removeAllViews();
+
+        int timePrejsnji = 0;
         for (int i = 0; i < numOfProcesses; i++) {
+
             Proces p = procesi[i];
             // ustvari rezino diagrama glede na pripadajoci proces
             child = new LinearLayout(this);
+            childValue = new LinearLayout(this);
 
             //nastavi barvo ozadja
             String bgColors[] = getResources().getStringArray(R.array.chart_colors);
             child.setBackgroundColor(Color.parseColor(bgColors[i]));
 
             // nastavi sirino (glede na težo), visino
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams paramsChart = new LinearLayout.LayoutParams(
                     0, ViewGroup.LayoutParams.MATCH_PARENT);
-            params.weight = p.get_trajanje_proc();
-            child.setLayoutParams(params);
+            paramsChart.weight = p.get_trajanje_proc();
+            child.setLayoutParams(paramsChart);
             ganttChart.addView(child);
+
+
+            LinearLayout.LayoutParams paramsChartValues = new LinearLayout.LayoutParams(
+                    0, ViewGroup.LayoutParams.MATCH_PARENT);
+            paramsChartValues.weight = p.get_trajanje_proc();
+            childValue.setLayoutParams(paramsChartValues);
+
+            // Ustvarimo se textView za izpis casa izvajanja za posamezno rezino,
+            // dodamo ga v LinearLayout (vizualno se nahaja pod gantovim diagramom), ki spada posamezni rezini
+            TextView textVal = new TextView(this);
+
+            // Poseben primer, treba je dodati dodaten TextView
+            if (i == 0) {
+                TextView textValSpec = new TextView(this);
+                LinearLayout.LayoutParams params1 = new
+                            LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT);
+                params1.weight = 1;
+                textValSpec.setLayoutParams(params1);
+                textValSpec.setText(0 + "");
+                childValue.addView(textValSpec);
+            }
+            else {
+                View fillerView = new View(this);
+                LinearLayout.LayoutParams params1 = new
+                        LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.MATCH_PARENT);
+                params1.weight = 1;
+                fillerView.setLayoutParams(params1);
+                childValue.addView(fillerView);
+            }
+            timePrejsnji += p.get_trajanje_proc();
+            textVal.setText(timePrejsnji + "");
+
+            LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            //textVal.setBackgroundColor(Color.parseColor(bgColors[i]));
+            textVal.setLayoutParams(lpView);
+            childValue.addView(textVal);
+
+            chartValues.addView(childValue);
         }
     }
 
+
     private void simulate() throws Exception {
-        if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
-            Proces ready_queue[] = Algoritmi.priority_scheduling(processesArray);
-            PomozneMetode.izracunajCakalneCasePS(ready_queue);
-            drawChart(ready_queue);
+        Proces ready_queue[];
+        switch (algorithmId) {
+            case Algoritmi.PRIORITY_SCHEDULING:
+                ready_queue = Algoritmi.priority_scheduling((Priority_Proces[]) processesArray);
+                PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue);
+                drawChart(ready_queue);
+                break;
+            case Algoritmi.SJN:
+                ready_queue = Algoritmi.sjn(processesArray);
+                //PomozneMetode.izpisiNavadneProcese(ready_queue, textAreaL);
+                //PomozneMetode.izracunajCakalneCaseSJN(ready_queue, textAreaL);
+                drawChart(ready_queue);
+                break;
+            case Algoritmi.HRRN:
+                ready_queue = Algoritmi.hrrn(processesArray);
+                drawChart(ready_queue);
+                break;
+            case Algoritmi.ROUND_ROBIN:
+
         }
+
     }
+
 }

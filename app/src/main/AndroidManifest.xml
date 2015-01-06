@@ -34,14 +34,7 @@
             android:name=".DisplayAlgorithmsActivity"
             android:label="@string/title_activity_display_algorithms" >
         </activity>
-        <activity
-            android:name=".AlgorithmSetupActivity"
-            android:label="@string/title_activity_algorithm_setup" >
-        </activity>
-        <activity
-            android:name=".AlgorithmSimulationActivity"
-            android:label="@string/title_activity_algorithm_simulation" >
-        </activity>
+
         <activity
             android:name=".AlgorithmsSwipeActivity"
             android:label="@string/title_activity_algorithms_swipe" >
