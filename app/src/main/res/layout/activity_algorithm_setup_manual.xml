@@ -2,7 +2,8 @@
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:id="@+id/fragment_manual_setup">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -357,7 +358,7 @@
                 />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textViewSeekBarProgress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="45dp"/>

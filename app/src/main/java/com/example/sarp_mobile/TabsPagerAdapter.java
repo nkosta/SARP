@@ -15,11 +15,15 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 
         switch (index) {
             case 0:
-                // Top Rated fragment activity
-                return new ProcessesDataFragment();
+                ProcessesDataFragment dat;
+                dat =  new ProcessesDataFragment();
+                //dat.setRetainInstance(true);
+                return dat;
             case 1:
-                // Games fragment activity
-                return new SimulationFragment();
+                SimulationFragment sim;
+                sim = new SimulationFragment();
+                //sim.setRetainInstance(true);
+                return sim;
         }
 
         return null;

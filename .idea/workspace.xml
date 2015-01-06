@@ -59,42 +59,60 @@
       <file leaf-file-name="AlgorithmsSwipeActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/AlgorithmsSwipeActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45603576" vertical-offset="867" max-vertical-offset="5304">
-              <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.89081454" vertical-offset="1254" max-vertical-offset="6426">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding>
-                <element signature="e#954#962#0" expanded="true" />
-                <element signature="e#7749#7769#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#1068#1076#0" expanded="true" />
+                <element signature="e#4421#4422#0" expanded="true" />
+                <element signature="e#4455#4456#0" expanded="true" />
+                <element signature="e#4490#4491#0" expanded="true" />
+                <element signature="e#4524#4525#0" expanded="true" />
+                <element signature="e#4562#4563#0" expanded="true" />
+                <element signature="e#4599#4600#0" expanded="true" />
+                <element signature="e#4643#4644#0" expanded="true" />
+                <element signature="e#4677#4678#0" expanded="true" />
+                <element signature="e#4724#4725#0" expanded="true" />
+                <element signature="e#4762#4763#0" expanded="true" />
+                <element signature="e#13667#13668#0" expanded="true" />
+                <element signature="e#13704#13705#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProcessesDataFragment.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/ProcessesDataFragment.java">
+      <file leaf-file-name="activity_algorithms_swipe.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithms_swipe.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1479">
-              <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
+            <state vertical-scroll-proportion="-2.5185184" vertical-offset="0" max-vertical-offset="170">
+              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TabsPagerAdapter.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/TabsPagerAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+              <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PomozneMetode.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/PomozneMetode.java">
+      <file leaf-file-name="SimulationFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/SimulationFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2682" max-vertical-offset="3553">
-              <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Algoritmi.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Algoritmi.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3204" max-vertical-offset="4063">
-              <caret line="217" column="68" selection-start-line="217" selection-start-column="68" selection-end-line="217" selection-end-column="68" />
-              <folding />
+            <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1071">
+              <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+              <folding>
+                <element signature="e#1796#1797#0" expanded="true" />
+                <element signature="e#1829#1830#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,8 +120,8 @@
       <file leaf-file-name="fragment_simulation.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_simulation.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.0" vertical-offset="357" max-vertical-offset="4998">
-              <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+            <state vertical-scroll-proportion="-15.740741" vertical-offset="0" max-vertical-offset="5015">
+              <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -112,16 +130,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_algorithm_setup_automatic.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_automatic.xml">
+      <file leaf-file-name="ProcessesDataFragment.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/ProcessesDataFragment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.9259257" vertical-offset="4631" max-vertical-offset="5576">
-              <caret line="285" column="12" selection-start-line="285" selection-start-column="12" selection-end-line="285" selection-end-column="12" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1734" max-vertical-offset="2941">
+              <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
               <folding />
             </state>
-          </provider>
-          <provider editor-type-id="android-designer">
-            <state />
           </provider>
         </entry>
       </file>
@@ -674,7 +689,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Proces.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_simulation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/algorithms_list.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/AlgorithmsArrayAdapter.java" />
@@ -683,20 +697,21 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_algorithms_swipe.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/FragmentPagerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/DisplayAlgorithmsActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/TabsPagerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/AlgorithmSetupActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/DataGenModeDialogFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/back.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/chart_colors.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_manual.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Priority_Proces.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_simulation.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Algoritmi.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_automatic.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/PomozneMetode.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/SimulationFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Proces.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/ProcessesDataFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/fragment_simulation.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_automatic.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_manual.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/TabsPagerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/SimulationFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/AlgorithmsSwipeActivity.java" />
       </list>
     </option>
@@ -736,7 +751,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -843,8 +859,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -855,7 +870,7 @@
     <property name="MemberChooser.showClasses" value="true" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="emulator-5554" />
+    <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_SERIALS" value="" />
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21_x86" />
     <property name="FullScreen" value="false" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
@@ -1074,7 +1089,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32302773" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1084,7 +1099,7 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2224694" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32703003" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1101,6 +1116,37 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17697228" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23470522" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Memory Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32302773" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39933258" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32703003" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1120,57 +1166,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="7" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/AlgorithmsArrayAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="782">
-          <caret line="29" column="74" selection-start-line="29" selection-start-column="74" selection-end-line="29" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_manual.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4998">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_automatic.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3239" max-vertical-offset="4335">
-          <caret line="207" column="41" selection-start-line="207" selection-start-column="41" selection-end-line="207" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/algorithms_row.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Priority_Proces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1088">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Algoritmi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="1751">
@@ -1302,17 +1301,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/algorithms_row.xml">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/data_gen_mode_array.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="871">
@@ -1328,17 +1316,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithms_swipe.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07715582" vertical-offset="0" max-vertical-offset="661">
-          <caret line="3" column="41" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/mybutton.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32122093" vertical-offset="0" max-vertical-offset="688">
@@ -1350,13 +1327,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.078071184" vertical-offset="0" max-vertical-offset="871">
           <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/TabsPagerAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.058553386" vertical-offset="0" max-vertical-offset="871">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1432,6 +1402,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Algoritmi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4694486" vertical-offset="3204" max-vertical-offset="4063">
+          <caret line="217" column="68" selection-start-line="217" selection-start-column="68" selection-end-line="217" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/PomozneMetode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.0953801" vertical-offset="2682" max-vertical-offset="3553">
+          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/algorithms_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Proces.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1594" max-vertical-offset="2465">
+          <caret line="159" column="36" selection-start-line="159" selection-start-column="36" selection-end-line="159" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3610#3611#0" expanded="true" />
+            <element signature="e#3634#3635#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4434#4435#0" expanded="true" />
+            <element signature="e#4480#4481#0" expanded="true" />
+            <element signature="e#4527#4528#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-19/android.jar!/android/os/Looper.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5683594" vertical-offset="117" max-vertical-offset="629">
@@ -1456,10 +1468,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-19/android.jar!/android/app/Instrumentation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1721" max-vertical-offset="2720">
+          <caret line="112" column="16" selection-start-line="112" selection-start-column="16" selection-end-line="112" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-19/android.jar!/android/app/Activity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="5852" max-vertical-offset="7565">
+          <caret line="355" column="16" selection-start-line="355" selection-start-column="16" selection-end-line="355" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0-sources.jar!/android/support/v4/view/ViewPager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33203125" vertical-offset="23103" max-vertical-offset="47804">
+          <caret line="1441" column="0" selection-start-line="1441" selection-start-column="0" selection-end-line="1441" selection-end-column="0" />
+          <folding>
+            <element signature="e#33353#33354#0" expanded="true" />
+            <element signature="e#33387#33388#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0-sources.jar!/android/support/v4/app/FragmentPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33203125" vertical-offset="1292" max-vertical-offset="2669">
+          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_manual.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33229813" vertical-offset="1367" max-vertical-offset="6613">
-          <caret line="93" column="24" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.1007109" vertical-offset="0" max-vertical-offset="6630">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
           <folding />
         </state>
       </provider>
@@ -1467,45 +1514,18 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/SimulationFragment.java">
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0-sources.jar!/android/support/v4/app/FragmentManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45603576" vertical-offset="0" max-vertical-offset="671">
-          <caret line="23" column="4" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.5074627" vertical-offset="14484" max-vertical-offset="34068">
+          <caret line="953" column="52" selection-start-line="953" selection-start-column="52" selection-end-line="953" selection-end-column="52" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/PomozneMetode.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2682" max-vertical-offset="3553">
-          <caret line="201" column="0" selection-start-line="201" selection-start-column="0" selection-end-line="201" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Proces.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2056632" vertical-offset="1098" max-vertical-offset="1836">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_automatic.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.9259257" vertical-offset="4631" max-vertical-offset="5576">
-          <caret line="285" column="12" selection-start-line="285" selection-start-column="12" selection-end-line="285" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/fragment_simulation.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.0" vertical-offset="357" max-vertical-offset="4998">
-          <caret line="48" column="47" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+        <state vertical-scroll-proportion="-15.740741" vertical-offset="0" max-vertical-offset="5015">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1513,29 +1533,74 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/Algoritmi.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithms_swipe.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3196" max-vertical-offset="4063">
-          <caret line="217" column="68" selection-start-line="217" selection-start-column="68" selection-end-line="217" selection-end-column="68" />
+        <state vertical-scroll-proportion="-2.5185184" vertical-offset="0" max-vertical-offset="170">
+          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_algorithm_setup_automatic.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="5627">
+          <caret line="4" column="45" selection-start-line="4" selection-start-column="45" selection-end-line="4" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/TabsPagerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
+          <caret line="20" column="27" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/SimulationFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1071">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+          <folding>
+            <element signature="e#1796#1797#0" expanded="true" />
+            <element signature="e#1829#1830#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/ProcessesDataFragment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="244" max-vertical-offset="1479">
-          <caret line="56" column="64" selection-start-line="56" selection-start-column="64" selection-end-line="56" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2941">
+          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/sarp_mobile/AlgorithmsSwipeActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45603576" vertical-offset="867" max-vertical-offset="5304">
-          <caret line="88" column="13" selection-start-line="88" selection-start-column="13" selection-end-line="88" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.89081454" vertical-offset="1254" max-vertical-offset="6426">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding>
-            <element signature="e#954#962#0" expanded="true" />
-            <element signature="e#7749#7769#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#1068#1076#0" expanded="true" />
+            <element signature="e#4421#4422#0" expanded="true" />
+            <element signature="e#4455#4456#0" expanded="true" />
+            <element signature="e#4490#4491#0" expanded="true" />
+            <element signature="e#4524#4525#0" expanded="true" />
+            <element signature="e#4562#4563#0" expanded="true" />
+            <element signature="e#4599#4600#0" expanded="true" />
+            <element signature="e#4643#4644#0" expanded="true" />
+            <element signature="e#4677#4678#0" expanded="true" />
+            <element signature="e#4724#4725#0" expanded="true" />
+            <element signature="e#4762#4763#0" expanded="true" />
+            <element signature="e#13667#13668#0" expanded="true" />
+            <element signature="e#13704#13705#0" expanded="true" />
           </folding>
         </state>
       </provider>

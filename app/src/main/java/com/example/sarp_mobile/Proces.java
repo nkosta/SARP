@@ -1,7 +1,9 @@
 package com.example.sarp_mobile;
 
-public class Proces
-{
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Proces implements Parcelable {
     /* Vsak proces ima naslednje atribute */
     private String ime_proc;
     private int trajanje_proc;
@@ -136,4 +138,39 @@ public class Proces
     {
         return String.format("%s\t%d\t%d", this.ime_proc, this.dospetje_proc, this.trajanje_proc);
     }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.ime_proc);
+        dest.writeInt(this.trajanje_proc);
+        dest.writeInt(this.dospetje_proc);
+        dest.writeInt(this.cakanje_proc);
+        dest.writeInt(this.min_t);
+        dest.writeInt(this.max_t);
+    }
+
+    private Proces(Parcel in) {
+        this.ime_proc = in.readString();
+        this.trajanje_proc = in.readInt();
+        this.dospetje_proc = in.readInt();
+        this.cakanje_proc = in.readInt();
+        //this.min_t = in.readInt();
+        //this.max_t = in.readInt();
+    }
+
+    public static final Parcelable.Creator<Proces> CREATOR = new Parcelable.Creator<Proces>() {
+        public Proces createFromParcel(Parcel source) {
+            return new Proces(source);
+        }
+
+        public Proces[] newArray(int size) {
+            return new Proces[size];
+        }
+    };
 }

@@ -1,6 +1,7 @@
 package com.example.sarp_mobile;
 
 import android.app.ActionBar;
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
@@ -18,7 +19,11 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Vector;
 
 
@@ -26,10 +31,12 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         ActionBar.TabListener {
 
     /*Vsebuje zapise oblike A 10 B 2 C 3 A 2 A 2... Črka pomeni ime proc, številka pa koliko časa se je izvajal - samo za RR. */
-    public static Vector<Object> RR_gantogram = new Vector<Object>();
+    public static List<Object> RR_gantogram = new ArrayList<Object>();
+
 
     private static Proces x = new Proces(null);
     private Proces[] processesArray;
+    Proces ready_queue[];
 
     private int numOfProcesses = 6;
 
@@ -40,6 +47,9 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     private TabsPagerAdapter mAdapter;
     private ActionBar actionBar;
 
+    HashMap<Character, Integer> slovarBarv;
+
+    LinearLayout ganttChart, chartValues;
 
     private int algorithmId, dataGenMode;
 
@@ -53,13 +63,12 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
         Intent intent = getIntent();
 
-        algorithmId = intent.getIntExtra("ALGORITHM", 0);
-        dataGenMode = intent.getIntExtra("DATA_GEN_MODE", 0);
-
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getActionBar();
         mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+
+        FragmentManager fm = getFragmentManager();
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
@@ -78,10 +87,11 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 // on changing the page
                 // make respected tab selected
                 actionBar.setSelectedNavigationItem(position);
-//                if (position == 1)
-//                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-//                else
-//                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+                if (position == 1) {
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+                }
+                else
+                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
             }
 
             @Override
@@ -92,6 +102,20 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+
+        if (savedInstanceState !=null) {
+            algorithmId = savedInstanceState.getInt("algorithmId");
+            dataGenMode = savedInstanceState.getInt("dataGenMode");
+            numOfProcesses = savedInstanceState.getInt("numOfProcesses");
+            ready_queue = (Proces[]) savedInstanceState.getParcelableArray("readyQueue");
+            processesArray = (Proces[]) savedInstanceState.getParcelableArray("processesArray");
+            slovarBarv = (HashMap<Character, Integer>) savedInstanceState.getSerializable("colorMap");
+
+        }
+        else {
+            algorithmId = intent.getIntExtra("ALGORITHM", 0);
+            dataGenMode = intent.getIntExtra("DATA_GEN_MODE", 0);
+        }
     }
 
     @Override
@@ -134,7 +158,6 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     // onClick Button Generiraj
     public void generateData(View view) {
         tableViewProcesses = (TableLayout)findViewById(R.id.process_table);
-        //btnSimuliraj = (Button)findViewById(R.id.buttonSimulate);
 
         x.resetAll();
         if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
@@ -192,7 +215,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
                     EditText editTextPriority = (EditText) row.getChildAt(3);
                     int priority = Integer.parseInt(editTextPriority.getText().toString());
-                    processesArray[i] = new Priority_Proces(ime.toString(), casDospetja, casTrajanja, priority);
+                    processesArray[i] = new Priority_Proces(ime.getText().toString(), casDospetja, casTrajanja, priority);
                 }
                 else {
                     processesArray[i] = new Proces(ime.toString(), casDospetja, casTrajanja);
@@ -212,8 +235,8 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
     // Funkcija za izris diagrama
     public void drawChart(Proces procesi[]) {
-        LinearLayout ganttChart = (LinearLayout) findViewById(R.id.gantt_chart);
-        LinearLayout chartValues = (LinearLayout) findViewById(R.id.gantt_chart_values);
+        ganttChart = (LinearLayout) findViewById(R.id.gantt_chart);
+        chartValues = (LinearLayout) findViewById(R.id.gantt_chart_values);
         LinearLayout child, childValue;
 
         ganttChart.removeAllViews();
@@ -222,7 +245,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         String bgColors[] = getResources().getStringArray(R.array.chart_colors);
 
         int counter = 0;
-        HashMap<Character, Integer> slovarBarv = new HashMap<Character, Integer>();
+        slovarBarv = new HashMap<Character, Integer>();
         for (Proces p : procesi) {
             Character imeP = p.get_ime_proc().charAt(0);
             if (slovarBarv.containsKey(imeP))
@@ -292,8 +315,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     }
 
 
-    private void simulate() throws Exception {
-        Proces ready_queue[];
+    public void simulate() throws Exception {
         switch (algorithmId) {
             case Algoritmi.PRIORITY_SCHEDULING:
                 ready_queue = Algoritmi.priority_scheduling((Priority_Proces[]) processesArray);
@@ -333,4 +355,19 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("numOfProcesses", numOfProcesses);
+        outState.putInt("algorithmId", algorithmId);
+        outState.putInt("dataGenMode", dataGenMode);
+
+        outState.putParcelableArray("readyQueue", ready_queue);
+        outState.putParcelableArray("processesArray", processesArray);
+        outState.putSerializable("colorMap", slovarBarv);
+    }
+
+    public Proces[] getProcessesArray() {
+        return processesArray;
+    }
 }
