@@ -1,5 +1,6 @@
 package com.example.sarp_mobile;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -18,5 +19,11 @@ public class SimulationFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_simulation, container, false);
 
         return rootView;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setRetainInstance(true);
     }
 }

@@ -200,8 +200,8 @@ public class Algoritmi
             {
                 if(bt[i] > q && bt[i] != 0)
                 {
-                    //Simulator.RR_gantogram.add(procesi[i].get_ime_proc());
-                    //Simulator.RR_gantogram.add(q);
+                    AlgorithmsSwipeActivity.RR_gantogram.add(procesi[i].get_ime_proc());
+                    AlgorithmsSwipeActivity.RR_gantogram.add(q);
 
                     bt[i] -= q;
 
@@ -214,8 +214,8 @@ public class Algoritmi
 
                 else if(bt[i] <= q && bt[i] != 0)
                 {
-                    //Simulator.RR_gantogram.add(procesi[i].get_ime_proc());
-                    //Simulator.RR_gantogram.add(bt[i]);
+                    AlgorithmsSwipeActivity.RR_gantogram.add(procesi[i].get_ime_proc());
+                    AlgorithmsSwipeActivity.RR_gantogram.add(bt[i]);
 
                     for(j=0; j<n; j++)
                     {

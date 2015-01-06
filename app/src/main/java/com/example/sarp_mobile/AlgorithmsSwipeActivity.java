@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -17,9 +18,15 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+import java.util.Vector;
+
 
 public class AlgorithmsSwipeActivity extends FragmentActivity implements
         ActionBar.TabListener {
+
+    /*Vsebuje zapise oblike A 10 B 2 C 3 A 2 A 2... Črka pomeni ime proc, številka pa koliko časa se je izvajal - samo za RR. */
+    public static Vector<Object> RR_gantogram = new Vector<Object>();
 
     private static Proces x = new Proces(null);
     private Proces[] processesArray;
@@ -71,6 +78,10 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 // on changing the page
                 // make respected tab selected
                 actionBar.setSelectedNavigationItem(position);
+//                if (position == 1)
+//                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+//                else
+//                    setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
             }
 
             @Override
@@ -192,6 +203,8 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
         try {
             simulate();
+            // Prestavi se na tab s simulacijo
+            //getActionBar().setSelectedNavigationItem(1);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -206,8 +219,22 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         ganttChart.removeAllViews();
         chartValues.removeAllViews();
 
+        String bgColors[] = getResources().getStringArray(R.array.chart_colors);
+
+        int counter = 0;
+        HashMap<Character, Integer> slovarBarv = new HashMap<Character, Integer>();
+        for (Proces p : procesi) {
+            Character imeP = p.get_ime_proc().charAt(0);
+            if (slovarBarv.containsKey(imeP))
+                continue;
+            else {
+                slovarBarv.put(imeP, Color.parseColor(bgColors[counter]));
+                counter++;
+            }
+        }
+
         int timePrejsnji = 0;
-        for (int i = 0; i < numOfProcesses; i++) {
+        for (int i = 0; i < procesi.length; i++) {
 
             Proces p = procesi[i];
             // ustvari rezino diagrama glede na pripadajoci proces
@@ -215,8 +242,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             childValue = new LinearLayout(this);
 
             //nastavi barvo ozadja
-            String bgColors[] = getResources().getStringArray(R.array.chart_colors);
-            child.setBackgroundColor(Color.parseColor(bgColors[i]));
+            child.setBackgroundColor(slovarBarv.get(p.get_ime_proc().charAt(0)));
 
             // nastavi sirino (glede na težo), visino
             LinearLayout.LayoutParams paramsChart = new LinearLayout.LayoutParams(
@@ -257,7 +283,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             textVal.setText(timePrejsnji + "");
 
             LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            //textVal.setBackgroundColor(Color.parseColor(bgColors[i]));
+
             textVal.setLayoutParams(lpView);
             childValue.addView(textVal);
 
@@ -285,7 +311,24 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 drawChart(ready_queue);
                 break;
             case Algoritmi.ROUND_ROBIN:
+                RR_gantogram.clear();
+                int quantum_a = 4;
+                ready_queue = Algoritmi.rr(processesArray, quantum_a);
+                Proces[] temp = new Proces[RR_gantogram.size()/2];
 
+//                PomozneMetode.izracunajCakalneCaseRR(ready_queue);
+                int cntr = 0;
+                for (int i = 0; i < RR_gantogram.size(); i+=2) {
+                    String imeP = (String) RR_gantogram.get(i);
+                    int trajanje_p = (Integer)RR_gantogram.get(i + 1);
+                    Proces p = new Proces();
+                    p.set_ime_proc(imeP);
+                    p.set_trajanje_proc(trajanje_p);
+                    temp[cntr] = p;
+                    cntr++;
+                }
+                drawChart(temp);
+                break;
         }
 
     }

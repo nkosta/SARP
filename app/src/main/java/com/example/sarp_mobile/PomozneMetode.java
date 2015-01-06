@@ -200,27 +200,4 @@ public class PomozneMetode
 //        textArea.append(String.format("Povprečen NTAT: %1.2f\n", (vsotaRnTat/ready_queue.length)));
 //    }
 
-//    public static void izpisiNavadneProcese(Proces ready_queue[], JTextArea textArea) throws Exception
-//    {
-//        textArea.append("Vrstni red izvajanja procesov:");
-//        textArea.append("\n");
-//
-//        for(int i=0;i<ready_queue.length;i++)
-//            textArea.append(String.format("%s za %d  ",ready_queue[i].get_ime_proc(),ready_queue[i].get_trajanje_proc()));
-//
-//        textArea.append("\n");
-//        textArea.append("\n");
-//    }
-//
-//    public static void izpisiPrioritetneProcese(Priority_Proces ready_queue[], JTextArea textArea) throws Exception
-//    {
-//        textArea.append("Vrstni red izvajanja procesov:");
-//        textArea.append("\n");
-//
-//        for(int i=0;i<ready_queue.length;i++)
-//            textArea.append(String.format("%s za %d  ",ready_queue[i].get_ime_proc(),ready_queue[i].get_trajanje_proc()));
-//
-//        textArea.append("\n");
-//        textArea.append("\n");
-//    }
 }

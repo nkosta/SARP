@@ -95,5 +95,4 @@ public class ProcessesDataFragment extends Fragment {
         return rootView;
     }
 
-
 }
