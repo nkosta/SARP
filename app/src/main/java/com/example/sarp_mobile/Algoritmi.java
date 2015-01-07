@@ -136,14 +136,14 @@ public class Algoritmi
             q = racunajRatio(q,time);
 
 			/* Na začetku Vektorja se vedno nahaja proces, ki ima najvisje razmerje. Ta gre naslednji v obdelavo. */
-//            Collections.sort(q, Collections.reverseOrder(new Comparator<Proces>() {
-//                public int compare(Proces p1, Proces p2) {
-//                    Double ratio1 = p1.get_proc_ratio();
-//                    Double ratio2 = p2.get_proc_ratio();
-//
-//                    return ratio1.compareTo(ratio2);
-//                }
-//            }));
+            Collections.sort(q, Collections.reverseOrder(new Comparator<Proces>() {
+                public int compare(Proces p1, Proces p2) {
+                    Double ratio1 = p1.get_proc_ratio();
+                    Double ratio2 = p2.get_proc_ratio();
+
+                    return ratio1.compareTo(ratio2);
+                }
+            }));
 
             izvedi.add(q.get(0));
             time += q.get(0).get_trajanje_proc();
@@ -165,7 +165,7 @@ public class Algoritmi
         {
             q.get(i).set_cas_cakanja(time - q.get(i).get_cas_dospetja_proc());
             ratio = (double)(q.get(i).get_cas_cakanja_proc() + (double)q.get(i).get_trajanje_proc()) / (double)q.get(i).get_trajanje_proc();
-//            q.get(i).set_proc_ratio(ratio);
+            q.get(i).set_proc_ratio(ratio);
         }
 
         return q;

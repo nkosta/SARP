@@ -7,9 +7,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.text.Html;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -316,20 +319,56 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
 
     public void simulate() throws Exception {
+        TableLayout tabSim = (TableLayout) findViewById(R.id.simulation_table);
+
+        tabSim.removeAllViews();
+
+        TableRow row = new TableRow(this);
+        TableRow.LayoutParams rowParams = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        rowParams.gravity = Gravity.CENTER_HORIZONTAL;
+        row.setLayoutParams(rowParams);
+
+        TextView textViewLabelProcessName = new TextView(this);
+        textViewLabelProcessName.setText(Html.fromHtml("<b>Ime\nProcesa</b>"));
+        textViewLabelProcessName.setTypeface(Typeface.SERIF);
+        textViewLabelProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        TextView textViewLabelWaitTime = new TextView(this);
+        textViewLabelWaitTime.setText(Html.fromHtml("<b>Čas\nčakanja</b>"));
+        textViewLabelWaitTime.setTypeface(Typeface.SERIF);
+        textViewLabelWaitTime.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        TextView textViewLabelTAT = new TextView(this);
+        textViewLabelTAT.setText(Html.fromHtml("<b>TAT</b>"));
+        textViewLabelTAT.setTypeface(Typeface.SERIF);
+        textViewLabelTAT.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        TextView textViewLabelRNTAT = new TextView(this);
+        textViewLabelRNTAT.setText(Html.fromHtml("<b>RNTAT</b>"));
+        textViewLabelRNTAT.setTypeface(Typeface.SERIF);
+        textViewLabelRNTAT.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        row.addView(textViewLabelProcessName);
+        row.addView(textViewLabelWaitTime);
+        row.addView(textViewLabelTAT);
+        row.addView(textViewLabelRNTAT);
+
+        tabSim.addView(row);
+
         switch (algorithmId) {
             case Algoritmi.PRIORITY_SCHEDULING:
                 ready_queue = Algoritmi.priority_scheduling((Priority_Proces[]) processesArray);
-                PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue);
+                PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue, this);
                 drawChart(ready_queue);
                 break;
             case Algoritmi.SJN:
                 ready_queue = Algoritmi.sjn(processesArray);
-                //PomozneMetode.izpisiNavadneProcese(ready_queue, textAreaL);
-                //PomozneMetode.izracunajCakalneCaseSJN(ready_queue, textAreaL);
+                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
                 drawChart(ready_queue);
                 break;
             case Algoritmi.HRRN:
                 ready_queue = Algoritmi.hrrn(processesArray);
+                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
                 drawChart(ready_queue);
                 break;
             case Algoritmi.ROUND_ROBIN:
@@ -338,7 +377,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 ready_queue = Algoritmi.rr(processesArray, quantum_a);
                 Proces[] temp = new Proces[RR_gantogram.size()/2];
 
-//                PomozneMetode.izracunajCakalneCaseRR(ready_queue);
+                PomozneMetode.izracunajCakalneCaseRR(ready_queue, this);
                 int cntr = 0;
                 for (int i = 0; i < RR_gantogram.size(); i+=2) {
                     String imeP = (String) RR_gantogram.get(i);

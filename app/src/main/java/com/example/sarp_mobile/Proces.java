@@ -9,10 +9,16 @@ public class Proces implements Parcelable {
     private int trajanje_proc;
     private int dospetje_proc;
     private int cakanje_proc;
+    private double proc_ratio;
+
     /*Pomožne spremenljivke v razredu*/
     /* Minimalna in maksimalna vrednost za čas trajaja procesa */
     private final int min_t = 1;
     private final int max_t = 10;
+
+    /* Minimalna in maksimalna vrednost za časovno rezino procesa pri RR */
+    private final int min_q = 1;
+    private final int max_q = 20;
 
     /* Pomožna spr., ki se uporablja za generiranje nakljucnega casa dospetja procesa */
     /* Prvi proces vedno pride v času 0. Vsak naslednji pa v času prejšnji +1 ali +2. */
@@ -68,6 +74,11 @@ public class Proces implements Parcelable {
         this.cakanje_proc = cakanje_proc;
     }
 
+    protected void set_proc_ratio(double proc_ratio)
+    {
+        this.proc_ratio = proc_ratio;
+    }
+
     protected String get_ime_proc()
     {
         return this.ime_proc;
@@ -86,6 +97,11 @@ public class Proces implements Parcelable {
     protected int get_cas_cakanja_proc()
     {
         return this.cakanje_proc;
+    }
+
+    protected double get_proc_ratio()
+    {
+        return this.proc_ratio;
     }
 
     /* Generira naključen čas trajanja procesa na intervalu 1 - 5 [min, max] */
@@ -108,6 +124,12 @@ public class Proces implements Parcelable {
     private String gen_ime_proc()
     {
         return (c++).toString();
+    }
+
+    /* Generira nakljucni quantum za RR med vključno 1 in vključno 20 */
+    public int gen_quantum()
+    {
+        return min_q + (int)(Math.random() * ((max_q - min_q) + 1));
     }
 
     /* Te metode ponastavijo vse staticne spremenljivke razreda */
@@ -151,8 +173,11 @@ public class Proces implements Parcelable {
         dest.writeInt(this.trajanje_proc);
         dest.writeInt(this.dospetje_proc);
         dest.writeInt(this.cakanje_proc);
+        dest.writeDouble(this.proc_ratio);
         dest.writeInt(this.min_t);
         dest.writeInt(this.max_t);
+        dest.writeInt(this.min_q);
+        dest.writeInt(this.max_q);
     }
 
     private Proces(Parcel in) {
@@ -160,8 +185,11 @@ public class Proces implements Parcelable {
         this.trajanje_proc = in.readInt();
         this.dospetje_proc = in.readInt();
         this.cakanje_proc = in.readInt();
+        this.proc_ratio = in.readDouble();
         //this.min_t = in.readInt();
         //this.max_t = in.readInt();
+        //this.min_q = in.readInt();
+        //this.max_q = in.readInt();
     }
 
     public static final Parcelable.Creator<Proces> CREATOR = new Parcelable.Creator<Proces>() {
