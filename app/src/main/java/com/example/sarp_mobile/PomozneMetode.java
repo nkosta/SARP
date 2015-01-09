@@ -95,30 +95,10 @@ public class PomozneMetode
 //                textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[i].get_ime_proc(),casCakanja,tat,rntat));
             }
 
-            TextView textViewProcessName = new TextView(a);
-            textViewProcessName.setText(ready_queue[i].get_ime_proc());
-            textViewProcessName.setTypeface(Typeface.SERIF);
-            textViewProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
+            String args[] = { ready_queue[i].get_ime_proc(), casCakanja + "",
+                    tat + "",  String.format("%.2f", rntat)};
 
-            TextView textViewWaitTime = new TextView(a);
-            textViewWaitTime.setText(casCakanja + "");
-            textViewWaitTime.setTypeface(Typeface.SERIF);
-            textViewWaitTime.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            TextView textViewTAT = new TextView(a);
-            textViewTAT.setText(tat + "");
-            textViewTAT.setTypeface(Typeface.SERIF);
-            textViewTAT.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            TextView textViewRNTAT = new TextView(a);
-            textViewRNTAT.setText(String.format("%.2f", rntat));
-            textViewRNTAT.setTypeface(Typeface.SERIF);
-            textViewRNTAT.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            row.addView(textViewProcessName);
-            row.addView(textViewWaitTime);
-            row.addView(textViewTAT);
-            row.addView(textViewRNTAT);
+            tabSim.addView(fillSimTableRow(args, a));
         }
 
 //        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
@@ -223,30 +203,11 @@ public class PomozneMetode
 
             }
 
-            TextView textViewProcessName = new TextView(a);
-            textViewProcessName.setText(ready_queue[i].get_ime_proc());
-            textViewProcessName.setTypeface(Typeface.SERIF);
-            textViewProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
+            String args[] = { ready_queue[i].get_ime_proc(), casCakanja + "",
+                    tat + "",  String.format("%.2f", rntat)};
 
-            TextView textViewWaitTime = new TextView(a);
-            textViewWaitTime.setText(casCakanja + "");
-            textViewWaitTime.setTypeface(Typeface.SERIF);
-            textViewWaitTime.setGravity(Gravity.CENTER_HORIZONTAL);
+            tabSim.addView(fillSimTableRow(args, a));
 
-            TextView textViewTAT = new TextView(a);
-            textViewTAT.setText(tat + "");
-            textViewTAT.setTypeface(Typeface.SERIF);
-            textViewTAT.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            TextView textViewRNTAT = new TextView(a);
-            textViewRNTAT.setText(String.format("%.2f", rntat));
-            textViewRNTAT.setTypeface(Typeface.SERIF);
-            textViewRNTAT.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            row.addView(textViewProcessName);
-            row.addView(textViewWaitTime);
-            row.addView(textViewTAT);
-            row.addView(textViewRNTAT);
         }
 
 //        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
@@ -274,43 +235,64 @@ public class PomozneMetode
             vsotaTat += tat;
             vsotaRnTat += rntat;
 
-            TableRow row = new TableRow(a);
-            TableRow.LayoutParams rowParams = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            rowParams.gravity = Gravity.CENTER_HORIZONTAL;
-            row.setLayoutParams(rowParams);
-            tabSim.addView(row);
+            String args[] = { ready_queue[i].get_ime_proc(), casCakanja + "",
+                              tat + "",  String.format("%.2f", rntat)};
 
-            TextView textViewProcessName = new TextView(a);
-            textViewProcessName.setText(ready_queue[i].get_ime_proc());
-            textViewProcessName.setTypeface(Typeface.SERIF);
-            textViewProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            TextView textViewWaitTime = new TextView(a);
-            textViewWaitTime.setText(casCakanja + "");
-            textViewWaitTime.setTypeface(Typeface.SERIF);
-            textViewWaitTime.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            TextView textViewTAT = new TextView(a);
-            textViewTAT.setText(tat + "");
-            textViewTAT.setTypeface(Typeface.SERIF);
-            textViewTAT.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            TextView textViewRNTAT = new TextView(a);
-            textViewRNTAT.setText(String.format("%.2f", rntat));
-            textViewRNTAT.setTypeface(Typeface.SERIF);
-            textViewRNTAT.setGravity(Gravity.CENTER_HORIZONTAL);
-
-            row.addView(textViewProcessName);
-            row.addView(textViewWaitTime);
-            row.addView(textViewTAT);
-            row.addView(textViewRNTAT);
+            tabSim.addView(fillSimTableRow(args, a));
 //            textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[i].get_ime_proc(),casCakanja,tat,rntat));
         }
 
+        fillSimTabAverageValues(vsotaCasovCakanja/ready_queue.length, vsotaTat/ready_queue.length,
+                                vsotaRnTat/ready_queue.length, a);
 //        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
 //        textArea.append(String.format("Povprečen TAT: %1.2f\n", (vsotaTat/ready_queue.length)));
 //        textArea.append(String.format("Povprečen NTAT: %1.2f\n", (vsotaRnTat/ready_queue.length)));
     }
 
+    public static View fillSimTableRow(String arguments[], AlgorithmsSwipeActivity a) {
+        TableRow row = new TableRow(a);
+        TableRow.LayoutParams rowParams = new TableRow.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        rowParams.gravity = Gravity.CENTER_HORIZONTAL;
+        row.setLayoutParams(rowParams);
+
+        TextView textViewProcessName = new TextView(a);
+        textViewProcessName.setText(arguments[0]);
+        textViewProcessName.setTypeface(Typeface.SERIF);
+        textViewProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        TextView textViewWaitTime = new TextView(a);
+        textViewWaitTime.setText(arguments[1]);
+        textViewWaitTime.setTypeface(Typeface.SERIF);
+        textViewWaitTime.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        TextView textViewTAT = new TextView(a);
+        textViewTAT.setText(arguments[2]);
+        textViewTAT.setTypeface(Typeface.SERIF);
+        textViewTAT.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        TextView textViewRNTAT = new TextView(a);
+        textViewRNTAT.setText(arguments[3]);
+        textViewRNTAT.setTypeface(Typeface.SERIF);
+        textViewRNTAT.setGravity(Gravity.CENTER_HORIZONTAL);
+
+        row.addView(textViewProcessName);
+        row.addView(textViewWaitTime);
+        row.addView(textViewTAT);
+        row.addView(textViewRNTAT);
+
+        return row;
+    }
+
+    private static void fillSimTabAverageValues(double wait_time, double tat, double ntat, AlgorithmsSwipeActivity a) {
+        LinearLayout l = (LinearLayout) a.findViewById(R.id.avg_values);
+        l.setVisibility(View.VISIBLE);
+        TextView tvWaitTime = (TextView) a.findViewById(R.id.avg_wait_time);
+        TextView tvTat = (TextView) a.findViewById(R.id.avg_tat);
+        TextView tvNtat = (TextView) a.findViewById(R.id.avg_ntat);
+
+        tvWaitTime.setText(String.format("Povprečen čas čakanja: %1.2f", wait_time));
+        tvTat.setText(String.format("Povprečen TAT: %1.2f", tat));
+        tvNtat.setText(String.format("Povprečen NTAT: %1.2f", ntat));
+    }
 }
 

@@ -67,41 +67,29 @@
                     android:shrinkColumns="*"
                     android:stretchColumns="*">
 
-                    <TableRow
-                        android:id="@+id/tableRow0"
-                        android:layout_height="wrap_content"
-                        android:layout_width="match_parent"
-                        android:gravity="center_horizontal">
-
-                        <TextView
-                            android:text="Ime\nprocesa"
-                            android:textStyle="bold"
-                            android:gravity="center_horizontal"
-                            android:typeface="serif">
-                        </TextView>
-                        <TextView
-                            android:text="Čas\nčakanja"
-                            android:textStyle="bold"
-                            android:gravity="center_horizontal"
-                            android:typeface="serif">
-                        </TextView>
-                        <TextView
-                            android:text="TAT"
-                            android:textStyle="bold"
-                            android:gravity="center_horizontal"
-                            android:typeface="serif">
-                        </TextView>
-                        <TextView
-                            android:text="NTAT"
-                            android:textStyle="bold"
-                            android:typeface="serif"
-                            android:gravity="center_horizontal">
-                        </TextView>
-                    </TableRow>
-
-
                 </TableLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/avg_values"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/avg_wait_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/avg_tat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/avg_ntat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
     </LinearLayout>
 </ScrollView><!-- From: file:/C:/Users/Kosta/AndroidstudioProjects/SARP_mobile/app/src/main/res/layout/fragment_simulation.xml -->

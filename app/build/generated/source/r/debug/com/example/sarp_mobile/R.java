@@ -97,7 +97,11 @@ public final class R {
         public static final int TextView04=0x7f09002e;
         public static final int TextView12=0x7f090031;
         public static final int TextViewAlgoSetupActivityTitle=0x7f090001;
-        public static final int action_settings=0x7f090056;
+        public static final int action_settings=0x7f09005a;
+        public static final int avg_ntat=0x7f090059;
+        public static final int avg_tat=0x7f090058;
+        public static final int avg_values=0x7f090056;
+        public static final int avg_wait_time=0x7f090057;
         public static final int buttonDisplayAlgorithms=0x7f09004f;
         public static final int buttonGenerateData=0x7f090028;
         public static final int editText1=0x7f09004e;
