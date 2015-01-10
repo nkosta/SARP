@@ -341,6 +341,29 @@
                     </TableRow>
                 </TableLayout>
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/quantum_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:paddingTop="20dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Quantum (od 1 do 20):"
+                    android:typeface="serif"/>
+
+                <EditText
+                    android:id="@+id/et_quantum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:digits="0123456789"
+                    android:maxLength="2"/>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -350,7 +373,7 @@
             <SeekBar
                 android:id="@+id/seekBar1"
                 android:layout_width="250dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_marginLeft="29dp"
                 android:layout_height="wrap_content"
                 android:progress="4"

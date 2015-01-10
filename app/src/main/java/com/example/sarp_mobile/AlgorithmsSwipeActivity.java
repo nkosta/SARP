@@ -90,11 +90,11 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 // on changing the page
                 // make respected tab selected
                 actionBar.setSelectedNavigationItem(position);
-                if (position == 1) {
+                if (position == 1)
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-                }
                 else
                     setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
             }
 
             @Override
@@ -221,7 +221,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                     processesArray[i] = new Priority_Proces(ime.getText().toString(), casDospetja, casTrajanja, priority);
                 }
                 else {
-                    processesArray[i] = new Proces(ime.toString(), casDospetja, casTrajanja);
+                    processesArray[i] = new Proces(ime.getText().toString(), casDospetja, casTrajanja);
                 }
                 casDospetjaPrev = casDospetja;
             }
@@ -258,7 +258,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 counter++;
             }
         }
-
+        float weight;
         int timePrejsnji = 0;
         for (int i = 0; i < procesi.length; i++) {
 
@@ -267,20 +267,33 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             child = new LinearLayout(this);
             childValue = new LinearLayout(this);
 
+            TextView pName = new TextView(this);
+            ViewGroup.LayoutParams lpProcName = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
+                                                ViewGroup.LayoutParams.FILL_PARENT);
+            pName.setLayoutParams(lpProcName);
+            pName.setText(p.get_ime_proc());
+            pName.setTextColor(Color.WHITE);
+            pName.setGravity(Gravity.CENTER);
+            child.addView(pName);
+
+            if (p.get_trajanje_proc() == 1)
+                weight = 1.7f;
+            else weight = p.get_trajanje_proc();
+
             //nastavi barvo ozadja
             child.setBackgroundColor(slovarBarv.get(p.get_ime_proc().charAt(0)));
 
             // nastavi sirino (glede na težo), visino
             LinearLayout.LayoutParams paramsChart = new LinearLayout.LayoutParams(
                     0, ViewGroup.LayoutParams.MATCH_PARENT);
-            paramsChart.weight = p.get_trajanje_proc();
+            paramsChart.weight = weight;
             child.setLayoutParams(paramsChart);
             ganttChart.addView(child);
 
 
             LinearLayout.LayoutParams paramsChartValues = new LinearLayout.LayoutParams(
                     0, ViewGroup.LayoutParams.MATCH_PARENT);
-            paramsChartValues.weight = p.get_trajanje_proc();
+            paramsChartValues.weight = weight;
             childValue.setLayoutParams(paramsChartValues);
 
             // Ustvarimo se textView za izpis casa izvajanja za posamezno rezino,
@@ -307,9 +320,9 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             }
             timePrejsnji += p.get_trajanje_proc();
             textVal.setText(timePrejsnji + "");
+            textVal.setPadding(10, 0, 0, 0);
 
             LinearLayout.LayoutParams lpView = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-
             textVal.setLayoutParams(lpView);
             childValue.addView(textVal);
 
@@ -329,12 +342,12 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         row.setLayoutParams(rowParams);
 
         TextView textViewLabelProcessName = new TextView(this);
-        textViewLabelProcessName.setText(Html.fromHtml("<b>Ime\nProcesa</b>"));
+        textViewLabelProcessName.setText(Html.fromHtml("<b>Ime<br>Procesa</b>"));
         textViewLabelProcessName.setTypeface(Typeface.SERIF);
         textViewLabelProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
 
         TextView textViewLabelWaitTime = new TextView(this);
-        textViewLabelWaitTime.setText(Html.fromHtml("<b>Čas\nčakanja</b>"));
+        textViewLabelWaitTime.setText(Html.fromHtml("<b>Čas<br>čakanja</b>"));
         textViewLabelWaitTime.setTypeface(Typeface.SERIF);
         textViewLabelWaitTime.setGravity(Gravity.CENTER_HORIZONTAL);
 
@@ -358,26 +371,41 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         switch (algorithmId) {
             case Algoritmi.PRIORITY_SCHEDULING:
                 ready_queue = Algoritmi.priority_scheduling((Priority_Proces[]) processesArray);
-                PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue, this);
                 drawChart(ready_queue);
+                PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue, this);
                 break;
             case Algoritmi.SJN:
                 ready_queue = Algoritmi.sjn(processesArray);
-                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
                 drawChart(ready_queue);
+                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
+                break;
+            case Algoritmi.FCFS:
+                ready_queue = Algoritmi.fcfs(processesArray);
+                drawChart(ready_queue);
+                PomozneMetode.izracunajCakalneCaseFCFS(processesArray, this);
                 break;
             case Algoritmi.HRRN:
                 ready_queue = Algoritmi.hrrn(processesArray);
-                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
                 drawChart(ready_queue);
+                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
                 break;
             case Algoritmi.ROUND_ROBIN:
                 RR_gantogram.clear();
-                int quantum_a = 4;
-                ready_queue = Algoritmi.rr(processesArray, quantum_a);
+                int quantum;
+                if (dataGenMode == 0)
+                    quantum = 4;
+                else {
+                    EditText etQuantum = (EditText) findViewById(R.id.et_quantum);
+                    quantum = Integer.parseInt(etQuantum.getText().toString());
+                    if (quantum < 1 || quantum > 20) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Quantum vrednost mora biti med 1 in 20", Toast.LENGTH_LONG);
+                        toast.show();
+                        return;
+                    }
+                }
+                ready_queue = Algoritmi.rr(processesArray, quantum);
                 Proces[] temp = new Proces[RR_gantogram.size()/2];
 
-                PomozneMetode.izracunajCakalneCaseRR(ready_queue, this);
                 int cntr = 0;
                 for (int i = 0; i < RR_gantogram.size(); i+=2) {
                     String imeP = (String) RR_gantogram.get(i);
@@ -389,6 +417,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                     cntr++;
                 }
                 drawChart(temp);
+                PomozneMetode.izracunajCakalneCaseRR(ready_queue, this);
                 break;
         }
 

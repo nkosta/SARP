@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -181,4 +182,12 @@ public class ProcessesDataFragment extends Fragment {
         outState.putStringArray("tabProcesovImena", tabImenProcesov);
     }
 
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (algorithmId == Algoritmi.ROUND_ROBIN && dataGenMode == 1) {
+            LinearLayout quantum_layout = (LinearLayout) contActivity.findViewById(R.id.quantum_layout);
+            quantum_layout.setVisibility(View.VISIBLE);
+        }
+    }
 }

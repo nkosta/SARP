@@ -286,25 +286,25 @@
                 android:orientation="vertical"
                 android:layout_marginTop="25dp">
 
-            <SeekBar
-                android:id="@+id/seekBar1"
-                android:layout_width="250dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="35dp"
-                android:layout_height="wrap_content"
-                android:progress="4"
-                android:max="4"
-                />
+                <SeekBar
+                    android:id="@+id/seekBar1"
+                    android:layout_width="250dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="35dp"
+                    android:layout_height="wrap_content"
+                    android:progress="4"
+                    android:max="4"
+                    />
 
-            <TextView
-                android:id="@+id/textViewSeekBarProgress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
-                android:layout_marginTop="6dp" />
+                <TextView
+                    android:id="@+id/textViewSeekBarProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="6dp" />
 
 
-        </LinearLayout>
+            </LinearLayout>
 
             <Button
                 android:id="@+id/buttonGenerateData"

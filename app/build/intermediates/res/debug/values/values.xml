@@ -6,8 +6,8 @@
         <item><b>Priority scheduling</b>, operacijski sistem vsakemu procesu dodeli fiksno prioriteto. Razvrščevalnik
             nato procese razvrsti v pravilnem vrstnem redu glede na prioriteto</item>
         <item><b>Shortest job next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
-        <item><b>Shortest remaining time</b>, preklopna (preemptive) verzija SJN algoritma</item>
-        <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SJN kjer je prioriteta
+        <item><b>First come first served</b>, procesi se izvedejo v zaporedju v kakršnem so prispeli</item>
+        <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SPN kjer je prioriteta
             odvisna od časa izvajanja ter časa čakanja</item>
         <item><b>Round-robin</b>, uporablja se pri procesnih ter omrežnih razvrščevalnikih. Vsakemu procesu je dodeljena 
             enakovredna časovna rezina, v krožnem zaporedju</item>
@@ -15,9 +15,9 @@
     <!-- From: file:/C:/Users/Kosta/AndroidstudioProjects/SARP_mobile/app/src/main/res/values/algorithms_list.xml -->
     <eat-comment/>
     <string-array name="algorithms_list_array">
-   	    <item>Priority Scheduling</item>
-   	    <item>Shortest job next</item>
-   	    <item>Shortest remaining time</item>
+   	    <item>Priority scheduling</item>
+   	    <item>Shortest process next</item>
+   	    <item>First come first served</item>
    	    <item>Highest response ratio next</item>
    	    <item>Round-robin</item>
  	</string-array>

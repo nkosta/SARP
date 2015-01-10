@@ -2,6 +2,7 @@ package com.example.sarp_mobile;
 
 import android.app.ActionBar;
 import android.graphics.Typeface;
+import android.text.Html;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,18 +29,6 @@ public class PomozneMetode
 
         return true;
     }
-
-    /* Funkcija preveri ali so vsa vnosna polja izpolnjena. */
-//    public static boolean hasPravilniVnos(JTextField vnosnaPolja[])
-//    {
-//        for(int i=0;i<vnosnaPolja.length;i++)
-//        {
-//            if(vnosnaPolja[i].getText().equals(""))
-//                return false;
-//        }
-//
-//        return true;
-//    }
 
 	/*NAT = terms of the queuing model, turnaround time (TAT) is the residence time Tr , or total
     time that the item(process) spends in the system (** waiting time plus service time (pri meni čas trajanja proc. **)
@@ -74,9 +63,6 @@ public class PomozneMetode
                 rntat = (double)(tat/(double)ready_queue[0].get_trajanje_proc());
                 vsotaTat += tat;
                 vsotaRnTat += rntat;
-
-
-//                textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[0].get_ime_proc(),casCakanja,tat,rntat));
             }
 
             else
@@ -91,8 +77,6 @@ public class PomozneMetode
                 rntat = (double)(tat/(double)ready_queue[i].get_trajanje_proc());
                 vsotaTat += tat;
                 vsotaRnTat += rntat;
-
-//                textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[i].get_ime_proc(),casCakanja,tat,rntat));
             }
 
             String args[] = { ready_queue[i].get_ime_proc(), casCakanja + "",
@@ -101,59 +85,60 @@ public class PomozneMetode
             tabSim.addView(fillSimTableRow(args, a));
         }
 
-//        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
-//        textArea.append(String.format("Povprečen TAT: %1.2f\n", (vsotaTat/ready_queue.length)));
-//        textArea.append(String.format("Povprečen NTAT: %1.2f\n", (vsotaRnTat/ready_queue.length)));
+        fillSimTabAverageValues(vsotaCasovCakanja/ready_queue.length, vsotaTat/ready_queue.length,
+                vsotaRnTat/ready_queue.length, a);
     }
 
     /* Metoda izračuna čakalne čase za posamezne procese algoritma FCFS.  */
-//    public static void izracunajCakalneCaseFCFS(Proces ready_queue[], JTextArea textArea) throws Exception
-//    {
-//        int tat;
-//        int time = 0;
-//        double rntat;
-//        int casCakanja = 0;
-//        double vsotaTat = 0;
-//        double vsotaRnTat = 0;
-//        double vsotaCasovCakanja = 0;
-//
-//        textArea.append("|Proces|\t|Čas čakanja|\t     |TAT|\t     |NTAT|\n");
-//
-//        for(int i=0;i<ready_queue.length;i++)
-//        {
-//            if(i == 0)
-//            {
-//                time += ready_queue[0].get_trajanje_proc();
-//                vsotaCasovCakanja += casCakanja;
-//                tat = (casCakanja + ready_queue[0].get_trajanje_proc());
-//                rntat = (double)(tat/(double)ready_queue[0].get_trajanje_proc());
-//                vsotaTat += tat;
-//                vsotaRnTat += rntat;
-//
-//                textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[0].get_ime_proc(),casCakanja,tat,rntat));
-//            }
-//
-//            else
-//            {
-//                while(ready_queue[i].get_cas_dospetja_proc() > time)
-//                    time++;
-//
-//                casCakanja = time - ready_queue[i].get_cas_dospetja_proc();
-//                time += ready_queue[i].get_trajanje_proc();
-//                vsotaCasovCakanja += casCakanja;
-//                tat = (casCakanja + ready_queue[i].get_trajanje_proc());
-//                rntat = (tat/(double)ready_queue[i].get_trajanje_proc());
-//                vsotaTat += tat;
-//                vsotaRnTat += rntat;
-//
-//                textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[i].get_ime_proc(),casCakanja,tat,rntat));
-//            }
-//        }
-//
-//        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
-//        textArea.append(String.format("Povprečen TAT: %1.2f\n", (vsotaTat/ready_queue.length)));
-//        textArea.append(String.format("Povprečen NTAT: %1.2f\n", (vsotaRnTat/ready_queue.length)));
-//    }
+    public static void izracunajCakalneCaseFCFS(Proces ready_queue[], AlgorithmsSwipeActivity a) throws Exception
+    {
+        int tat;
+        int time = 0;
+        double rntat;
+        int casCakanja = 0;
+        double vsotaTat = 0;
+        double vsotaRnTat = 0;
+        double vsotaCasovCakanja = 0;
+
+        TableLayout tabSim = (TableLayout) a.findViewById(R.id.simulation_table);
+
+        for(int i=0;i<ready_queue.length;i++)
+        {
+            if(i == 0)
+            {
+                time += ready_queue[0].get_trajanje_proc();
+                vsotaCasovCakanja += casCakanja;
+                tat = (casCakanja + ready_queue[0].get_trajanje_proc());
+                rntat = (double)(tat/(double)ready_queue[0].get_trajanje_proc());
+                vsotaTat += tat;
+                vsotaRnTat += rntat;
+
+            }
+
+            else
+            {
+                while(ready_queue[i].get_cas_dospetja_proc() > time)
+                    time++;
+
+                casCakanja = time - ready_queue[i].get_cas_dospetja_proc();
+                time += ready_queue[i].get_trajanje_proc();
+                vsotaCasovCakanja += casCakanja;
+                tat = (casCakanja + ready_queue[i].get_trajanje_proc());
+                rntat = (tat/(double)ready_queue[i].get_trajanje_proc());
+                vsotaTat += tat;
+                vsotaRnTat += rntat;
+
+            }
+
+            String args[] = { ready_queue[i].get_ime_proc(), casCakanja + "",
+                    tat + "",  String.format("%.2f", rntat)};
+
+            tabSim.addView(fillSimTableRow(args, a));
+        }
+
+        fillSimTabAverageValues(vsotaCasovCakanja/ready_queue.length, vsotaTat/ready_queue.length,
+                vsotaRnTat/ready_queue.length, a);
+    }
 
     /* Metoda izračuna čakalne čase za posamezne procese algoritma SJN.  */
     public static void izracunajCakalneCaseSJN(Proces[] ready_queue, AlgorithmsSwipeActivity a) throws Exception
@@ -210,9 +195,8 @@ public class PomozneMetode
 
         }
 
-//        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
-//        textArea.append(String.format("Povprečen TAT: %1.2f\n", (vsotaTat/ready_queue.length)));
-//        textArea.append(String.format("Povprečen NTAT: %1.2f\n", (vsotaRnTat/ready_queue.length)));
+        fillSimTabAverageValues(vsotaCasovCakanja/ready_queue.length, vsotaTat/ready_queue.length,
+                vsotaRnTat/ready_queue.length, a);
     }
 
     public static void izracunajCakalneCaseRR(Proces[] ready_queue, AlgorithmsSwipeActivity a)
@@ -239,14 +223,10 @@ public class PomozneMetode
                               tat + "",  String.format("%.2f", rntat)};
 
             tabSim.addView(fillSimTableRow(args, a));
-//            textArea.append(String.format("    %s\t        %2d\t       %2d\t       %1.2f\n",ready_queue[i].get_ime_proc(),casCakanja,tat,rntat));
         }
 
         fillSimTabAverageValues(vsotaCasovCakanja/ready_queue.length, vsotaTat/ready_queue.length,
                                 vsotaRnTat/ready_queue.length, a);
-//        textArea.append(String.format("Povprečen čas čakanja: %1.2f\n", (vsotaCasovCakanja/ready_queue.length)));
-//        textArea.append(String.format("Povprečen TAT: %1.2f\n", (vsotaTat/ready_queue.length)));
-//        textArea.append(String.format("Povprečen NTAT: %1.2f\n", (vsotaRnTat/ready_queue.length)));
     }
 
     public static View fillSimTableRow(String arguments[], AlgorithmsSwipeActivity a) {
@@ -256,7 +236,8 @@ public class PomozneMetode
         row.setLayoutParams(rowParams);
 
         TextView textViewProcessName = new TextView(a);
-        textViewProcessName.setText(arguments[0]);
+        textViewProcessName.setTextColor(a.slovarBarv.get(arguments[0].charAt(0)));
+        textViewProcessName.setText(Html.fromHtml("<b>"+arguments[0]+"</b>"));
         textViewProcessName.setTypeface(Typeface.SERIF);
         textViewProcessName.setGravity(Gravity.CENTER_HORIZONTAL);
 
@@ -289,6 +270,7 @@ public class PomozneMetode
         TextView tvWaitTime = (TextView) a.findViewById(R.id.avg_wait_time);
         TextView tvTat = (TextView) a.findViewById(R.id.avg_tat);
         TextView tvNtat = (TextView) a.findViewById(R.id.avg_ntat);
+
 
         tvWaitTime.setText(String.format("Povprečen čas čakanja: %1.2f", wait_time));
         tvTat.setText(String.format("Povprečen TAT: %1.2f", tat));

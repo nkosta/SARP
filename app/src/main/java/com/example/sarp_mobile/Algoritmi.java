@@ -9,6 +9,7 @@ public class Algoritmi
 {
     public final static int PRIORITY_SCHEDULING = 0;
     public final static int SJN = 1;
+    public final static int FCFS = 2;
     public final static int HRRN = 3;
     public final static int ROUND_ROBIN = 4;
 

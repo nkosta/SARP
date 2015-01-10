@@ -12,7 +12,7 @@ public class AlgorithmsArrayAdapter extends ArrayAdapter<String> {
 	private final Context context;
 	private final String[] values;
 	private final int[] images = {R.drawable.image_algorithms_ps, R.drawable.image_algorithms_sjn,
-								  R.drawable.image_algorithms_srt, R.drawable.image_algorithms_hrrn,
+								  R.drawable.image_algorithms_fcfs, R.drawable.image_algorithms_hrrn,
 								  R.drawable.image_algorithms_rr};
 
 	public AlgorithmsArrayAdapter(Context context, String[] values) {
@@ -29,7 +29,7 @@ public class AlgorithmsArrayAdapter extends ArrayAdapter<String> {
     	TextView textView = (TextView) rowView.findViewById(R.id.label);
 	    ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 	    textView.setText(values[position]);
-	    // Change the icon for Windows and iPhone
+
 	    String s = values[position];
 	    
 	    imageView.setImageResource(images[position]);

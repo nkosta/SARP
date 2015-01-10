@@ -3,15 +3,15 @@
         <item><b>Priority scheduling</b>, operacijski sistem vsakemu procesu dodeli fiksno prioriteto. Razvrščevalnik
             nato procese razvrsti v pravilnem vrstnem redu glede na prioriteto</item>
         <item><b>Shortest job next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
-        <item><b>Shortest remaining time</b>, preklopna (preemptive) verzija SJN algoritma</item>
-        <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SJN kjer je prioriteta
+        <item><b>First come first served</b>, procesi se izvedejo v zaporedju v kakršnem so prispeli</item>
+        <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SPN kjer je prioriteta
             odvisna od časa izvajanja ter časa čakanja</item>
         <item><b>Round-robin</b>, uporablja se pri procesnih ter omrežnih razvrščevalnikih. Vsakemu procesu je dodeljena 
             enakovredna časovna rezina, v krožnem zaporedju</item>
     </string-array></file><file path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\main\res\values\algorithms_list.xml" qualifiers=""><string-array name="algorithms_list_array">
-   	    <item>Priority Scheduling</item>
-   	    <item>Shortest job next</item>
-   	    <item>Shortest remaining time</item>
+   	    <item>Priority scheduling</item>
+   	    <item>Shortest process next</item>
+   	    <item>First come first served</item>
    	    <item>Highest response ratio next</item>
    	    <item>Round-robin</item>
  	</string-array></file><file path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\main\res\values\chart_colors.xml" qualifiers=""><string-array name="chart_colors">
@@ -43,4 +43,4 @@
         <!-- API 11 theme customizations can go here. -->
     </style></file><file path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\main\res\values-v14\styles.xml" qualifiers="v14"><style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- API 14 theme customizations can go here. -->
-    </style></file><file path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\main\res\values-w820dp\dimens.xml" qualifiers="w820dp-v13"><dimen name="activity_horizontal_margin">64dp</dimen></file></source><source path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\build\generated\res\rs\debug"/><source path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\debug\res"/></dataSet><mergedItems/></merger>
+    </style></file><file path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\main\res\values-w820dp\dimens.xml" qualifiers="w820dp-v13"><dimen name="activity_horizontal_margin">64dp</dimen></file><file name="image_algorithms_fcfs" path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\main\res\drawable-hdpi\image_algorithms_fcfs.jpg" qualifiers="hdpi-v4" type="drawable"/></source><source path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\build\generated\res\rs\debug"/><source path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\build\generated\res\generated\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\src\debug\res"/></dataSet><mergedItems/></merger>
