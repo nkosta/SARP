@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+       
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical" >
+
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="2"
+		android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            android:textSize="15dp"
+            android:inputType="textMultiLine"
+            android:text="@string/sarp_opis"
+            android:clickable="false" 
+	        android:cursorVisible="false" 
+	        android:focusable="false" 
+	        android:focusableInTouchMode="false"
+	        android:typeface="serif"
+	        android:background="#00000000" />
+
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+            android:layout_marginTop="25dp">
+            
+	        <Button
+	            android:id="@+id/buttonDisplayAlgorithms"
+	            android:layout_width="200dp"
+            	android:layout_height="35dp"
+	            android:layout_centerInParent="true"	            
+	            android:background="@drawable/mybutton"
+	            android:textColor="#ffffff"
+	            android:text="seznam algoritmov"
+	            android:onClick="getAlgorithmsList"  />
+        </RelativeLayout>
+        
+	</LinearLayout>
+        
+</LinearLayout><!-- From: file:/C:/Users/Kosta/AndroidstudioProjects/SARP_mobile/app/src/main/res/layout/activity_main.xml -->

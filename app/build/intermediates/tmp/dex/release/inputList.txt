@@ -1,0 +1,2 @@
+C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\build\intermediates\classes\release
+C:\Users\Kosta\AndroidstudioProjects\SARP_mobile\app\build\intermediates\pre-dexed\release\support-v4-19.1.0-c9d5870edc385a7808928e03d396338aaf9afcf2.jar

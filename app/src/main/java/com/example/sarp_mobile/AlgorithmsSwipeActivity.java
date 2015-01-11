@@ -46,6 +46,8 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     private int dataFragmentLayout;
     private TableLayout tableViewProcesses;
 
+    boolean allowSimulation = false;
+
     private ViewPager viewPager;
     private TabsPagerAdapter mAdapter;
     private ActionBar actionBar;
@@ -112,6 +114,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             numOfProcesses = savedInstanceState.getInt("numOfProcesses");
             ready_queue = (Proces[]) savedInstanceState.getParcelableArray("readyQueue");
             processesArray = (Proces[]) savedInstanceState.getParcelableArray("processesArray");
+            allowSimulation = savedInstanceState.getBoolean("allowSimulation");
             slovarBarv = (HashMap<Character, Integer>) savedInstanceState.getSerializable("colorMap");
 
         }
@@ -173,6 +176,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         int casDospetjaPrev = -1;
         for (int i = 0; i < numOfProcesses; i++) {
             TableRow row = (TableRow) tableViewProcesses.getChildAt(i + 1);
+            int casDospetja;
             if (dataGenMode == 0) {
                 if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
                     processesArray[i] = new Priority_Proces();
@@ -182,7 +186,12 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 else {
                     processesArray[i] = new Proces();
                 }
-                int casDospetja = processesArray[i].get_cas_dospetja_proc();
+                if (algorithmId == Algoritmi.ROUND_ROBIN) {
+                    casDospetja = 0;
+                    processesArray[i].set_cas_dospetja_proc(0);
+                }
+                else
+                    casDospetja = processesArray[i].get_cas_dospetja_proc();
                 int casTrajanja = processesArray[i].get_trajanje_proc();
                 TextView casD = (TextView) row.getChildAt(1);
                 TextView casT = (TextView) row.getChildAt(2);
@@ -192,21 +201,25 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
             else {
                 EditText ime = (EditText) row.getChildAt(0);
                 EditText casD;
-                int casDospetja;
 
                 if (i == 0) {
                     casDospetja = 0;
                 }
                 else {
                     casD = (EditText) row.getChildAt(1);
-                    casDospetja = Integer.parseInt(casD.getText().toString());
+                    String casDText = casD.getText().toString();
+                    if (casDText == null || casDText.isEmpty()) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Niste vnesli vseh vrednosti", Toast.LENGTH_LONG);
+                        toast.show();
+                        return;
+                    }
+                    casDospetja = Integer.parseInt(casDText);
                 }
 
-                if (casDospetja <= casDospetjaPrev) {
+                if (casDospetja <= casDospetjaPrev && algorithmId != Algoritmi.ROUND_ROBIN) {
                     Context context = getApplicationContext();
                     CharSequence text = casDospetja == casDospetjaPrev ? "Dva ali več procesov imajo enak čas dospetja"
                             : "časi dospetja niso kronološko urejeni";
-                    //int duration = 3;
 
                     Toast toast = Toast.makeText(context, text, Toast.LENGTH_LONG);
                     toast.show();
@@ -214,7 +227,13 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 }
 
                 EditText casT = (EditText) row.getChildAt(2);
-                int casTrajanja = Integer.parseInt(casT.getText().toString());
+                String casTText = casT.getText().toString();
+                if (casTText == null || casTText.isEmpty()) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Niste vnesli vseh vrednosti", Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
+                int casTrajanja = Integer.parseInt(casTText);
                 if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
                     EditText editTextPriority = (EditText) row.getChildAt(3);
                     int priority = Integer.parseInt(editTextPriority.getText().toString());
@@ -226,7 +245,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 casDospetjaPrev = casDospetja;
             }
         }
-
+        allowSimulation = true;
         try {
             simulate();
             // Prestavi se na tab s simulacijo
@@ -331,7 +350,9 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     }
 
 
-    public void simulate() throws Exception {
+    public void simulate() {
+        if (!allowSimulation)
+            return;
         TableLayout tabSim = (TableLayout) findViewById(R.id.simulation_table);
 
         tabSim.removeAllViews();
@@ -357,7 +378,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         textViewLabelTAT.setGravity(Gravity.CENTER_HORIZONTAL);
 
         TextView textViewLabelRNTAT = new TextView(this);
-        textViewLabelRNTAT.setText(Html.fromHtml("<b>RNTAT</b>"));
+        textViewLabelRNTAT.setText(Html.fromHtml("<b>NTAT</b>"));
         textViewLabelRNTAT.setTypeface(Typeface.SERIF);
         textViewLabelRNTAT.setGravity(Gravity.CENTER_HORIZONTAL);
 
@@ -370,24 +391,49 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
 
         switch (algorithmId) {
             case Algoritmi.PRIORITY_SCHEDULING:
-                ready_queue = Algoritmi.priority_scheduling((Priority_Proces[]) processesArray);
-                drawChart(ready_queue);
-                PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue, this);
+                try {
+                    ready_queue = Algoritmi.priority_scheduling((Priority_Proces[]) processesArray);
+                    drawChart(ready_queue);
+                    PomozneMetode.izracunajCakalneCasePS((Priority_Proces[]) ready_queue, this);
+                }
+                catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Napaka med izvajanjem algoritma Priority Scheduling", Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
                 break;
             case Algoritmi.SJN:
-                ready_queue = Algoritmi.sjn(processesArray);
-                drawChart(ready_queue);
-                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
+                try {
+                    ready_queue = Algoritmi.sjn(processesArray);
+                    drawChart(ready_queue);
+                    PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Napaka med izvajanjem algoritma SPN", Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
                 break;
             case Algoritmi.FCFS:
-                ready_queue = Algoritmi.fcfs(processesArray);
-                drawChart(ready_queue);
-                PomozneMetode.izracunajCakalneCaseFCFS(processesArray, this);
+                try {
+                    ready_queue = Algoritmi.fcfs(processesArray);
+                    drawChart(ready_queue);
+                    PomozneMetode.izracunajCakalneCaseFCFS(processesArray, this);
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Napaka med izvajanjem algoritma FCFS", Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
                 break;
             case Algoritmi.HRRN:
-                ready_queue = Algoritmi.hrrn(processesArray);
-                drawChart(ready_queue);
-                PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
+                try {
+                    ready_queue = Algoritmi.hrrn(processesArray);
+                    drawChart(ready_queue);
+                    PomozneMetode.izracunajCakalneCaseSJN(ready_queue, this);
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Napaka med izvajanjem algoritma HRRN", Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
                 break;
             case Algoritmi.ROUND_ROBIN:
                 RR_gantogram.clear();
@@ -396,14 +442,26 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                     quantum = 4;
                 else {
                     EditText etQuantum = (EditText) findViewById(R.id.et_quantum);
-                    quantum = Integer.parseInt(etQuantum.getText().toString());
+                    String quantumText = etQuantum.getText().toString();
+                    if (quantumText == null || quantumText.isEmpty()) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Niste vnesli quantum vrednosti", Toast.LENGTH_LONG);
+                        toast.show();
+                        return;
+                    }
+                    quantum = Integer.parseInt(quantumText);
                     if (quantum < 1 || quantum > 20) {
                         Toast toast = Toast.makeText(getApplicationContext(), "Quantum vrednost mora biti med 1 in 20", Toast.LENGTH_LONG);
                         toast.show();
                         return;
                     }
                 }
-                ready_queue = Algoritmi.rr(processesArray, quantum);
+                try {
+                    ready_queue = Algoritmi.rr(processesArray, quantum);
+                } catch (Exception e) {
+                    Toast toast = Toast.makeText(getApplicationContext(), "Napaka med izvajanjem algoritma Round Robin", Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
                 Proces[] temp = new Proces[RR_gantogram.size()/2];
 
                 int cntr = 0;
@@ -429,6 +487,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
         outState.putInt("numOfProcesses", numOfProcesses);
         outState.putInt("algorithmId", algorithmId);
         outState.putInt("dataGenMode", dataGenMode);
+        outState.putBoolean("allowSimulation", allowSimulation);
 
         outState.putParcelableArray("readyQueue", ready_queue);
         outState.putParcelableArray("processesArray", processesArray);

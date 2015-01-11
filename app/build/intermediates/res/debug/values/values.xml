@@ -5,7 +5,7 @@
     <string-array name="algorithms_descriptions_array">
         <item><b>Priority scheduling</b>, operacijski sistem vsakemu procesu dodeli fiksno prioriteto. Razvrščevalnik
             nato procese razvrsti v pravilnem vrstnem redu glede na prioriteto</item>
-        <item><b>Shortest job next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
+        <item><b>Shortest process next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
         <item><b>First come first served</b>, procesi se izvedejo v zaporedju v kakršnem so prispeli</item>
         <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SPN kjer je prioriteta
             odvisna od časa izvajanja ter časa čakanja</item>
@@ -45,17 +45,17 @@
     <!-- From: file:/C:/Users/Kosta/AndroidstudioProjects/SARP_mobile/app/src/main/res/values/strings.xml -->
     <eat-comment/>
     <string name="action_settings">Settings</string>
-    <string name="app_name">SARP_mobile</string>
+    <string name="app_name">SARP</string>
     <string name="cancel">Prekliči</string>
     <string name="confirm">Potrdi</string>
     <string name="dialog1_title">Način generiranja procesov ter njihovih atributov</string>
     <string name="hello_world">Hello world!</string>
     <string name="sarp_opis">Simulacija algoritmov za razvrščanje procesov (scheduling)
         \n\nAplikacija omogoča učinkovito utrjevanje in poglabljanje znanja</string>
-    <string name="title_activity_algorithm_setup">AlgorithmSetupActivity</string>
-    <string name="title_activity_algorithm_simulation">AlgorithmSimulationActivity</string>
-    <string name="title_activity_algorithms_swipe">AlgorithmsSwipeActivity</string>
-    <string name="title_activity_display_algorithms">DisplayAlgorithmsActivity</string>
+    <string name="title_activity_algorithm_setup">Generiranje podatkov</string>
+    <string name="title_activity_algorithm_simulation">Simulacija</string>
+    <string name="title_activity_algorithms_swipe">Simulacija algoritma</string>
+    <string name="title_activity_display_algorithms">Seznam algoritmov</string>
     <!-- From: file:/C:/Users/Kosta/AndroidstudioProjects/SARP_mobile/app/src/main/res/values/styles.xml -->
     <eat-comment/>
     <style name="AppBaseTheme" parent="android:Theme.Light">

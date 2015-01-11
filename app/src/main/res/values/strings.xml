@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">SARP_mobile</string>
+    <string name="app_name">SARP</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="sarp_opis">Simulacija algoritmov za razvrščanje procesov (scheduling)
-        \n\nAplikacija omogoča učinkovito utrjevanje in poglabljanje znanja</string>
-    <string name="title_activity_display_algorithms">DisplayAlgorithmsActivity</string>
+    <string name="sarp_opis">Simulacija algoritmov za razvrščanje procesov</string>
+    <string name="title_activity_display_algorithms">Seznam algoritmov</string>
     <string name="confirm">Potrdi</string>
     <string name="cancel">Prekliči</string>
     <string name="dialog1_title">Način generiranja procesov ter njihovih atributov</string>
-    <string name="title_activity_algorithm_setup">AlgorithmSetupActivity</string>
-    <string name="title_activity_algorithm_simulation">AlgorithmSimulationActivity</string>
-    <string name="title_activity_algorithms_swipe">AlgorithmsSwipeActivity</string>
+    <string name="title_activity_algorithm_setup">Generiranje podatkov</string>
+    <string name="title_activity_algorithm_simulation">Simulacija</string>
+    <string name="title_activity_algorithms_swipe">Simulacija algoritma</string>
 
 </resources>

@@ -3,7 +3,7 @@
     <string-array name="algorithms_descriptions_array">
         <item><b>Priority scheduling</b>, operacijski sistem vsakemu procesu dodeli fiksno prioriteto. Razvrščevalnik
             nato procese razvrsti v pravilnem vrstnem redu glede na prioriteto</item>
-        <item><b>Shortest job next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
+        <item><b>Shortest process next</b>, algoritem za naslednji proces izbere tistega z najkrajšim časom izvajanja</item>
         <item><b>First come first served</b>, procesi se izvedejo v zaporedju v kakršnem so prispeli</item>
         <item><b>Highest response ratio next</b>, nepreklopen (non-preemptive) način, podoben SPN kjer je prioriteta
             odvisna od časa izvajanja ter časa čakanja</item>

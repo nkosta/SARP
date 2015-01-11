@@ -20,6 +20,8 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class ProcessesDataFragment extends Fragment {
 
     AlgorithmsSwipeActivity contActivity;
@@ -53,6 +55,7 @@ public class ProcessesDataFragment extends Fragment {
         textViewSeekBarDescription = (TextView) rootView.findViewById(R.id.textViewSeekBarProgress);
         textViewTitle = (TextView) rootView.findViewById(R.id.TextViewAlgoSetupActivityTitle);
         tableViewProcesses = (TableLayout)rootView.findViewById(R.id.process_table);
+
 
         if (savedInstanceState !=null) {
             int tabProcesov[] = savedInstanceState.getIntArray("tabProcesovVrednosti");
@@ -125,7 +128,7 @@ public class ProcessesDataFragment extends Fragment {
                     TextView v = (TextView) row.getChildAt(j);
                     v.setText("0");
                 }
-                if (j == 0) {
+                else if (j == 0) {
                     TextView v = (TextView) row.getChildAt(j);
                     v.setText(processNames[i]);
                 }
@@ -160,7 +163,7 @@ public class ProcessesDataFragment extends Fragment {
             for (int j = 0; j < 4; j++) {
                 if (i == 0 && j == 1)
                     value = 0;
-                if (j == 0) {
+                else if (j == 0) {
                     TextView v = (TextView) row.getChildAt(j);
                     tabImenProcesov[i] = v.getText().toString();
                 }
@@ -171,7 +174,10 @@ public class ProcessesDataFragment extends Fragment {
                     }
                     else {
                         EditText v = (EditText) row.getChildAt(j);
-                        value = Integer.parseInt(v.getText().toString());
+                        String vText =  v.getText().toString();
+                        if (vText == null || vText.isEmpty())
+                            vText = "0";
+                        value = Integer.parseInt(vText);
                     }
                 }
                 tabProcesov[counter]= value;
@@ -188,6 +194,13 @@ public class ProcessesDataFragment extends Fragment {
         if (algorithmId == Algoritmi.ROUND_ROBIN && dataGenMode == 1) {
             LinearLayout quantum_layout = (LinearLayout) contActivity.findViewById(R.id.quantum_layout);
             quantum_layout.setVisibility(View.VISIBLE);
+
+            for (int i = 2; i < 7; i++) {
+                TableRow row = (TableRow) tableViewProcesses.getChildAt(i);
+                EditText ETcasDospetja = (EditText) row.getChildAt(1);
+                ETcasDospetja.setKeyListener(null);
+            }
+
         }
     }
 }
