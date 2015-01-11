@@ -15,6 +15,12 @@ public class PomozneMetode
 {
 
     /* Funkcija preveri ali v tabeli obstaja duplikat elementa. */
+    /**
+     * Checks if now two start times in table are the same
+     *
+     * @param tab Process start times
+     * @return False if duplicate time found in table other wise true
+     */
     public static boolean hasEnakCasdospetja(int[] tab)
     {
         int val = tab[0];
@@ -36,6 +42,13 @@ public class PomozneMetode
 	to service time.*/
 
     /* Metoda izračuna čakalne čase za posamezne procese algoritma PS.  */
+    /**
+     * Computes wait times for PS algorithm for the queue of processes passed in
+     *
+     * @param ready_queue
+     * @param a           Results are feed directly into this AlgorithmsSwipeActivity instance
+     * @throws Exception
+     */
     public static void izracunajCakalneCasePS(Priority_Proces ready_queue[], AlgorithmsSwipeActivity a) throws Exception
     {
         int tat = 0;
@@ -141,6 +154,12 @@ public class PomozneMetode
     }
 
     /* Metoda izračuna čakalne čase za posamezne procese algoritma SJN.  */
+    /**
+     * Calculates wait times for Shortest job next SNJ algorithm for processes passed in
+     * @param ready_queue queue of processes for calucaltion
+     * @param a  AlgorithmsSwipeActivity into which is updated with the results
+     * @throws Exception
+     */
     public static void izracunajCakalneCaseSJN(Proces[] ready_queue, AlgorithmsSwipeActivity a) throws Exception
     {
         int tat;
@@ -198,7 +217,12 @@ public class PomozneMetode
         fillSimTabAverageValues(vsotaCasovCakanja/ready_queue.length, vsotaTat/ready_queue.length,
                 vsotaRnTat/ready_queue.length, a);
     }
-
+    /**
+     *  Calculates the wait times for Round Robin algorithm
+     *
+     * @param ready_queue queue of processes to process
+     * @param a   AlgorithmsSwipeActivity instance which will be updated with the results
+     */
     public static void izracunajCakalneCaseRR(Proces[] ready_queue, AlgorithmsSwipeActivity a)
     {
         int tat;

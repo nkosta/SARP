@@ -1,5 +1,7 @@
 package com.example.sarp_mobile;
-
+/**
+ * Extends normal Process class and adds priority handling
+ */
 public class Priority_Proces extends Proces
 {
     /* Atribut, ki je značilen samo za določene algoritme */
@@ -13,14 +15,27 @@ public class Priority_Proces extends Proces
 
     /* Privzeti konstruktor. V njem podedujemo atribute razreda Proces */
     /* in generiramo prioriteto procesa */
+    /**
+     * Use super to initialize Process super class
+     * Generates randomly a priority value
+     */
     public Priority_Proces()
     {
         super();
         this.prioriteta_proc = gen_prioriteta();
     }
-
+    /**
+     * Empty constructor
+     * @param n
+     */
     public Priority_Proces(Object n){}
-
+    /**
+     *  Instances instance with suplied parameters
+     * @param imeProcesa Process name
+     * @param casDospetjaProcesa Process start time
+     * @param casTrajanjaProcesa process duration
+     * @param prioritetaProcesa process priority
+     */
     public Priority_Proces(String imeProcesa, int casDospetjaProcesa, int casTrajanjaProcesa, int prioritetaProcesa)
     {
         super.set_ime_proc(imeProcesa);
@@ -30,11 +45,18 @@ public class Priority_Proces extends Proces
     }
 
     /* get in set metodi za atribut prioriteta */
+    /**
+     * Setter for process priority
+     * @param prioriteta_proc new value for priority
+     */
     protected void set_prioriteta_proc(int prioriteta_proc)
     {
         this.prioriteta_proc = prioriteta_proc;
     }
-
+    /**
+     * Getter for Process priority
+     * @return current Process priority
+     */
     protected int get_prioriteta_proc()
     {
         return this.prioriteta_proc;

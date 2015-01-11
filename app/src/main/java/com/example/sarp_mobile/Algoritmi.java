@@ -19,6 +19,12 @@ public class Algoritmi
         return procesi;
     }
 
+    /**
+     * Array of Process to use in simulations
+     *
+     * @param procesi
+     * @return
+     */
     public static Priority_Proces[] priority_scheduling(Priority_Proces[]procesi) throws Exception
     {
         Priority_Proces[]temp = procesi.clone();
@@ -35,7 +41,13 @@ public class Algoritmi
 
         return temp;
     }
-
+    /**
+     * Simulation of Shortest job next (SJN)
+     * Algorithm for process execution
+     *
+     * @param procesi process tused in simulation
+     * @return Process with updated values
+     */
     public static Proces[] sjn(Proces[]procesi) throws Exception
     {
         int i;
@@ -86,7 +98,12 @@ public class Algoritmi
 
         return temp;
     }
-
+    /**
+     * Simulation of Highest Response Ratio Next (HRRN)
+     *
+     * @param procesi process tused in simulation
+     * @return Process with updated values
+     */
     public static Proces[] hrrn(Proces[]procesi) throws Exception
     {
         int k = 1;
@@ -172,6 +189,13 @@ public class Algoritmi
         return q;
     }
 
+    /**
+     * Round-robin (RR) algorithm simulation
+     *
+     * @param procesi process used in simulation
+     * @param quantum Cpu time allowed  for each process before interuption
+     * @return Process with updated values
+     */
     public static Proces[] rr(Proces[]procesi, int quantum) throws Exception
     {
         int j;
