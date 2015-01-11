@@ -46,6 +46,7 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     private int dataFragmentLayout;
     private TableLayout tableViewProcesses;
 
+    // Ali je ustrezno stanje za izris simulacije
     boolean allowSimulation = false;
 
     private ViewPager viewPager;

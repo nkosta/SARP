@@ -4,7 +4,7 @@
     <string name="app_name">SARP</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="sarp_opis">Simulacija algoritmov za razvrščanje procesov</string>
+    <string name="sarp_opis">Simulacija Algoritmov za Razvrščanje Procesov</string>
     <string name="title_activity_display_algorithms">Seznam algoritmov</string>
     <string name="confirm">Potrdi</string>
     <string name="cancel">Prekliči</string>
