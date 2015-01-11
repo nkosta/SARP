@@ -2,7 +2,11 @@ package com.example.sarp_mobile;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-
+/**
+ * Process object
+ * Stores data relevant to analysis of process execution
+ * Handles random data generation per process atinstantiationn
+ */
 public class Proces implements Parcelable {
     /* Vsak proces ima naslednje atribute */
     private String ime_proc;
@@ -30,10 +34,19 @@ public class Proces implements Parcelable {
 
     /* Začetna vrednost (ime) za generiranje imen procesov */
     static Character c = 'A';
-
+    /**
+     * Empty constructor
+     *
+     * @param n
+     */
     public Proces(Object n){}
 
     /* Privzeti konstruktor, ki zgenerira vse vrednosti */
+    /**
+     * Constructor without parameters generates
+     * Name is char variable incremented by 1 for each call to this constructor
+     * Random process start and random process duration
+     */
     public Proces()
     {
         this.ime_proc = gen_ime_proc();
@@ -45,6 +58,13 @@ public class Proces implements Parcelable {
     }
 
     /* Ta konstruktor ima vse tri atribute. */
+    /**
+     * Constructor creates instance with data in supplied parameters
+     *
+     * @param ime_proc          Proces name
+     * @param cas_dospetja_proc Process start time
+     * @param trajanje_proc     Process duration
+     */
     public Proces(String ime_proc, int cas_dospetja_proc, int trajanje_proc)
     {
         this.ime_proc = ime_proc;
@@ -54,21 +74,39 @@ public class Proces implements Parcelable {
     }
 
     /* get in set metode/funkcije za vse 3 atribute */
+    /**
+     * Setter for process name
+     *
+     * @param ime_proc
+     */
     protected void set_ime_proc(String ime_proc)
     {
         this.ime_proc = ime_proc;
     }
 
+    /**
+     * Setter for proces duration time
+     *
+     * @param trajanje_proc
+     */
     protected void set_trajanje_proc(int trajanje_proc)
     {
         this.trajanje_proc = trajanje_proc;
     }
-
+    /**
+     * Setter for process start time
+     *
+     * @param cas_dospetja_proc
+     */
     protected void set_cas_dospetja_proc(int cas_dospetja_proc)
     {
         this.dospetje_proc = cas_dospetja_proc;
     }
-
+    /**
+     * Setter for process wait time
+     *
+     * @param cakanje_proc
+     */
     protected void set_cas_cakanja(int cakanje_proc)
     {
         this.cakanje_proc = cakanje_proc;
@@ -78,22 +116,38 @@ public class Proces implements Parcelable {
     {
         this.proc_ratio = proc_ratio;
     }
-
+    /**
+     * Getter for process name
+     *
+     * @return current process name
+     */
     protected String get_ime_proc()
     {
         return this.ime_proc;
     }
-
+    /**
+     * Getter for process duration
+     *
+     * @return current process duration
+     */
     protected int get_trajanje_proc()
     {
         return this.trajanje_proc;
     }
-
+    /**
+     * Getter for proces start time
+     *
+     * @return current time of process start
+     */
     protected int get_cas_dospetja_proc()
     {
         return this.dospetje_proc;
     }
-
+    /**
+     * Getter for process wait time
+     *
+     * @return current wait time for process
+     */
     protected int get_cas_cakanja_proc()
     {
         return this.cakanje_proc;
@@ -133,21 +187,31 @@ public class Proces implements Parcelable {
     }
 
     /* Te metode ponastavijo vse staticne spremenljivke razreda */
+    /**
+     * Resets counter used so that randomly generated start times aren't in conflict
+     */
     public void reset_cas_dosp()
     {
         cas_dosp = 0;
     }
-
+    /**
+     * Resets is first call flag used
+     * to get start time zero for first process generated
+     */
     public void reset_prvi_klic()
     {
         prvi_klic = true;
     }
-
+    /**
+     * Resets char variable used to generate process names
+     */
     public void reset_names()
     {
         c = 'A';
     }
-
+    /**
+     * Resets all the static variables
+     */
     public void resetAll()
     {
         c = 'A';

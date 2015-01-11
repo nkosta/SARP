@@ -163,6 +163,16 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     }
 
     // onClick Button Generiraj
+    /**
+     * Generates random data for algorithm simulation if option is true
+     * or fills user provided data into processesArray
+     * Number of processes are read from this view
+     * for each process priority random values are generated  call
+     * to Priority_Process constructor StartTime ,Priority if needed
+     * and duration are generated at random
+     * <p/>
+     * After the data is setup simulate() is called inside a try block
+     */
     public void generateData(View view) {
         tableViewProcesses = (TableLayout)findViewById(R.id.process_table);
 
@@ -263,6 +273,11 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     }
 
     // Funkcija za izris diagrama
+    /**
+     * Draws Gantt chart with data calculated with simulate()
+     *
+     * @param procesi Array of Process objects containing data to visualize in Gantt chart form
+     */
     public void drawChart(Proces procesi[]) {
         ganttChart = (LinearLayout) findViewById(R.id.gantt_chart);
         chartValues = (LinearLayout) findViewById(R.id.gantt_chart_values);
@@ -357,6 +372,13 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
     }
 
 
+    /**
+     * Call respective Algorithm handling methods based on currently selected algorithm
+     * Methods used for calculation are in PomozneMetode class
+     * when finished calls drawChart with the calculated data
+     *
+     * @throws Exception
+     */
     public void simulate() {
         if (!allowSimulation)
             return;
