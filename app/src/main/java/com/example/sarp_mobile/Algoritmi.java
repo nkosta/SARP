@@ -23,8 +23,8 @@ public class Algoritmi
      * Array of Process to use in simulations
      *
      * @param procesi
-     * @return
-     */
+     * @return  array sorted by process priority
+      */
     public static Priority_Proces[] priority_scheduling(Priority_Proces[]procesi) throws Exception
     {
         Priority_Proces[]temp = procesi.clone();
