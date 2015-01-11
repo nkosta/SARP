@@ -50,8 +50,7 @@
     <string name="confirm">Potrdi</string>
     <string name="dialog1_title">Način generiranja procesov ter njihovih atributov</string>
     <string name="hello_world">Hello world!</string>
-    <string name="sarp_opis">Simulacija algoritmov za razvrščanje procesov (scheduling)
-        \n\nAplikacija omogoča učinkovito utrjevanje in poglabljanje znanja</string>
+    <string name="sarp_opis">Simulacija algoritmov za razvrščanje procesov</string>
     <string name="title_activity_algorithm_setup">Generiranje podatkov</string>
     <string name="title_activity_algorithm_simulation">Simulacija</string>
     <string name="title_activity_algorithms_swipe">Simulacija algoritma</string>
