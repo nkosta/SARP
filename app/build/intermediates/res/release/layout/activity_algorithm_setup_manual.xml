@@ -105,6 +105,7 @@
                         <TextView
                             android:id="@+id/TextView12"
                             android:text="0"
+                            android:textSize="18.5dp"
                             android:typeface="serif"
                             android:gravity="center_horizontal">
                         </TextView>

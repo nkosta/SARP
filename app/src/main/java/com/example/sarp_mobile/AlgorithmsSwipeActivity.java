@@ -236,7 +236,13 @@ public class AlgorithmsSwipeActivity extends FragmentActivity implements
                 int casTrajanja = Integer.parseInt(casTText);
                 if (algorithmId == Algoritmi.PRIORITY_SCHEDULING) {
                     EditText editTextPriority = (EditText) row.getChildAt(3);
-                    int priority = Integer.parseInt(editTextPriority.getText().toString());
+                    String priorityText = editTextPriority.getText().toString();
+                    if (priorityText == null || priorityText.isEmpty()) {
+                        Toast toast = Toast.makeText(getApplicationContext(), "Niste vnesli vseh vrednosti", Toast.LENGTH_LONG);
+                        toast.show();
+                        return;
+                    }
+                    int priority = Integer.parseInt(priorityText);
                     processesArray[i] = new Priority_Proces(ime.getText().toString(), casDospetja, casTrajanja, priority);
                 }
                 else {
