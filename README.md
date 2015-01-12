@@ -10,8 +10,8 @@ Cilj projekta je izdelati mobilno aplikacijo za Android platformo katera bo omog
 algoritmov za razvrščanje procesov.
 
 -  FCFS (First Come First Served)
--  SJN (Shortest Job Next)
--  SRT (Shortest Remaining Time)
+-  SPN (Shortest Process Next)
+-  RR  (Round-Robin)
 -  Priority Scheduling
 -  HRRN (Highest Response Ratio Next)
 
